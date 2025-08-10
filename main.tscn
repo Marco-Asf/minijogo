@@ -1,0 +1,186 @@
+[gd_scene load_steps=25 format=3 uid="uid://cjq48saf4fkmk"]
+
+[ext_resource type="Texture2D" uid="uid://b68j0ebwmtw62" path="res://Assets/Paróquia.PNG" id="1_0odxb"]
+[ext_resource type="Texture2D" uid="uid://dy6uxe20y03uu" path="res://Assets/Bonecos/Cazumb├í.png" id="1_8niev"]
+[ext_resource type="Script" uid="uid://csb065rye17ig" path="res://object_1.gd" id="1_n2xsb"]
+[ext_resource type="Script" uid="uid://bi1ycgwn3c5pl" path="res://object_2.gd" id="2_mmwfu"]
+[ext_resource type="Script" uid="uid://b21h50vip7e8p" path="res://object_3.gd" id="3_ant2b"]
+[ext_resource type="Texture2D" uid="uid://chgoxsk6yfsu2" path="res://Assets/Bonecos/Boina.png" id="3_jgcsn"]
+[ext_resource type="Texture2D" uid="uid://ckniyklqmwik" path="res://Assets/Bonecos/Badalo.png" id="5_gt7ck"]
+[ext_resource type="Script" uid="uid://h7f663i31iwk" path="res://button.gd" id="7_14rsb"]
+[ext_resource type="Texture2D" uid="uid://c5pnau6kgu22o" path="res://Assets/Bonecos/Matraca.png" id="7_efxa6"]
+[ext_resource type="AudioStream" uid="uid://bqmpwnrvel8dp" path="res://Assets/Sons/wrong_sound.mp3" id="8_bwsjx"]
+[ext_resource type="Script" uid="uid://vbtwpfwhufgq" path="res://object_4.gd" id="8_dg77c"]
+[ext_resource type="AudioStream" uid="uid://d1lke0rf0uvy7" path="res://Assets/Sons/correct_sound.mp3" id="9_2dpol"]
+[ext_resource type="Texture2D" uid="uid://gq6aepupqx7s" path="res://Assets/Bonecos/├ìndia.png" id="9_dg77c"]
+[ext_resource type="Script" uid="uid://vhvbvlxe8yf6" path="res://object_5.gd" id="10_ycdy4"]
+[ext_resource type="Texture2D" uid="uid://3dk3b6rfo8pp" path="res://Assets/Bonecos/Bandeira do Divino.png" id="11_vivmo"]
+[ext_resource type="Script" uid="uid://ci1f47hqwwvky" path="res://object_6.gd" id="12_2cqfq"]
+[ext_resource type="Texture2D" uid="uid://bmrfka4ckkcc3" path="res://Assets/Bonecos/Radiola.png" id="13_yaehf"]
+[ext_resource type="Script" uid="uid://chn2yegbg2tmm" path="res://object_7.gd" id="14_074og"]
+[ext_resource type="Texture2D" uid="uid://llqhrsu6qxd8" path="res://Assets/Bonecos/Pomba do divino.png" id="15_cegan"]
+[ext_resource type="Script" uid="uid://bvvepfc4h53xg" path="res://object_8.gd" id="16_82xsv"]
+[ext_resource type="Texture2D" uid="uid://dyoxe4upfjd3l" path="res://Assets/Bonecos/Disco.png" id="17_d13ii"]
+[ext_resource type="Script" uid="uid://bspu0dketbskt" path="res://object_9.gd" id="18_1u8w0"]
+[ext_resource type="Texture2D" uid="uid://g8r4yuw1bms" path="res://Assets/Bonecos/Vela.png" id="19_0odxb"]
+[ext_resource type="Script" uid="uid://bn8mghvftrwhd" path="res://object_10.gd" id="20_lswn8"]
+
+[node name="Node2D" type="Node2D"]
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+
+[node name="Cenário" type="TextureRect" parent="."]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 9.0
+offset_top = 7.0
+offset_right = 1156.0
+offset_bottom = 648.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("1_0odxb")
+expand_mode = 2
+
+[node name="Object1" type="TextureButton" parent="."]
+offset_left = 913.0
+offset_top = 304.0
+offset_right = 2101.0
+offset_bottom = 1840.0
+scale = Vector2(0.1, 0.1)
+texture_normal = ExtResource("1_8niev")
+stretch_mode = 0
+script = ExtResource("1_n2xsb")
+
+[node name="Object2" type="TextureButton" parent="."]
+offset_left = 203.0
+offset_top = 489.0
+offset_right = 641.0
+offset_bottom = 797.0
+scale = Vector2(0.3, 0.3)
+texture_normal = ExtResource("3_jgcsn")
+script = ExtResource("2_mmwfu")
+is_correct_object = true
+
+[node name="Object3" type="TextureButton" parent="."]
+offset_left = 91.0
+offset_top = 494.0
+offset_right = 451.0
+offset_bottom = 855.0
+scale = Vector2(0.3, 0.3)
+texture_normal = ExtResource("5_gt7ck")
+script = ExtResource("3_ant2b")
+
+[node name="Object4" type="TextureButton" parent="."]
+offset_left = 437.0
+offset_top = 493.0
+offset_right = 875.0
+offset_bottom = 838.0
+scale = Vector2(0.3, 0.3)
+texture_normal = ExtResource("7_efxa6")
+script = ExtResource("8_dg77c")
+
+[node name="Object5" type="TextureButton" parent="."]
+offset_left = 592.0
+offset_top = 96.0
+offset_right = 1126.0
+offset_bottom = 487.0
+scale = Vector2(0.4, 0.4)
+texture_normal = ExtResource("9_dg77c")
+script = ExtResource("10_ycdy4")
+
+[node name="Object6" type="TextureButton" parent="."]
+offset_left = 203.0
+offset_top = 150.0
+offset_right = 679.0
+offset_bottom = 521.0
+scale = Vector2(0.4, 0.4)
+texture_normal = ExtResource("11_vivmo")
+script = ExtResource("12_2cqfq")
+
+[node name="Object7" type="TextureButton" parent="."]
+offset_left = 670.0
+offset_top = 461.0
+offset_right = 1147.0
+offset_bottom = 878.0
+scale = Vector2(0.3, 0.3)
+texture_normal = ExtResource("13_yaehf")
+script = ExtResource("14_074og")
+
+[node name="Object8" type="TextureButton" parent="."]
+offset_left = 34.0
+offset_top = 286.0
+offset_right = 512.0
+offset_bottom = 639.0
+scale = Vector2(0.33, 0.33)
+texture_normal = ExtResource("15_cegan")
+script = ExtResource("16_82xsv")
+
+[node name="Object9" type="TextureButton" parent="."]
+offset_left = 461.0
+offset_top = 178.0
+offset_right = 865.0
+offset_bottom = 480.0
+scale = Vector2(0.3, 0.3)
+texture_normal = ExtResource("17_d13ii")
+script = ExtResource("18_1u8w0")
+
+[node name="Object10" type="TextureButton" parent="."]
+offset_left = 240.0
+offset_top = 356.0
+offset_right = 674.0
+offset_bottom = 766.0
+scale = Vector2(0.3, 0.3)
+texture_normal = ExtResource("19_0odxb")
+script = ExtResource("20_lswn8")
+
+[node name="InfoCard" type="Panel" parent="."]
+visible = false
+offset_left = 262.0
+offset_top = 262.0
+offset_right = 527.0
+offset_bottom = 328.0
+
+[node name="Label" type="Label" parent="InfoCard"]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 23.0
+text = "Parabéns, encontrou o correto!"
+
+[node name="Button" type="Button" parent="InfoCard"]
+layout_mode = 0
+offset_left = 273.0
+offset_top = -51.0
+offset_right = 333.0
+offset_bottom = -20.0
+text = "Fechar
+"
+script = ExtResource("7_14rsb")
+
+[node name="AudioPlayerWrong" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("8_bwsjx")
+
+[node name="AudioPlayerCorrect" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("9_2dpol")
+
+[connection signal="mouse_entered" from="Object1" to="Object1" method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="Object1" to="Object1" method="_on_mouse_exited"]
+[connection signal="mouse_entered" from="Object2" to="Object2" method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="Object2" to="Object2" method="_on_mouse_exited"]
+[connection signal="mouse_entered" from="Object3" to="Object3" method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="Object3" to="Object3" method="_on_mouse_exited"]
+[connection signal="mouse_entered" from="Object4" to="Object4" method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="Object4" to="Object4" method="_on_mouse_exited"]
+[connection signal="mouse_entered" from="Object5" to="Object5" method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="Object5" to="Object5" method="_on_mouse_exited"]
+[connection signal="mouse_entered" from="Object6" to="Object6" method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="Object6" to="Object6" method="_on_mouse_exited"]
+[connection signal="mouse_entered" from="Object7" to="Object7" method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="Object7" to="Object7" method="_on_mouse_exited"]
+[connection signal="mouse_entered" from="Object8" to="Object8" method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="Object8" to="Object8" method="_on_mouse_exited"]
+[connection signal="mouse_entered" from="Object9" to="Object9" method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="Object9" to="Object9" method="_on_mouse_exited"]
+[connection signal="mouse_entered" from="Object10" to="Object10" method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="Object10" to="Object10" method="_on_mouse_exited"]
+[connection signal="pressed" from="InfoCard/Button" to="InfoCard/Button" method="_on_pressed"]
