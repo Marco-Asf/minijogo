@@ -15,6 +15,11 @@ run/main_scene="res://main.tscn"
 config/features=PackedStringArray("4.4", "Mobile")
 config/icon="res://icon.svg"
 
+[autoload]
+
+ProgressManager="*res://autoload/progress_manager.gd"
+Global="*res://scriptglobal.gd"
+
 [rendering]
 
 renderer/rendering_method="gl_compatibility"

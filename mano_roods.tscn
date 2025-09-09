@@ -1,34 +1,60 @@
-[gd_scene load_steps=11 format=3 uid="uid://y74gnddw4ua8"]
+[gd_scene load_steps=26 format=3 uid="uid://y74gnddw4ua8"]
 
-[ext_resource type="PackedScene" uid="uid://cjq48saf4fkmk" path="res://main.tscn" id="1_5qtnw"]
 [ext_resource type="Texture2D" uid="uid://clkhkfrk3tdoe" path="res://Assets/Fundos/Casa do Divino.PNG" id="2_3lgox"]
+[ext_resource type="Script" uid="uid://csb065rye17ig" path="res://object_1.gd" id="3_d4fdt"]
 [ext_resource type="Texture2D" uid="uid://b6e6d6j0g7bwp" path="res://Assets/Bonecos/tambor 2.png" id="3_xgrfh"]
 [ext_resource type="Texture2D" uid="uid://llqhrsu6qxd8" path="res://Assets/Bonecos/Pomba do divino.png" id="4_1cffv"]
 [ext_resource type="Texture2D" uid="uid://q6iu1stdayip" path="res://Assets/Bonecos/fitas.png" id="4_qyqpt"]
 [ext_resource type="Texture2D" uid="uid://c257n55oft80q" path="res://Assets/Bonecos/tambor 1.png" id="4_taqb3"]
 [ext_resource type="Texture2D" uid="uid://djkj3fxqvvlrl" path="res://Assets/Bonecos/caxeira 2.png" id="4_vrshb"]
+[ext_resource type="Script" uid="uid://bi1ycgwn3c5pl" path="res://object_2.gd" id="5_oiuy4"]
+[ext_resource type="Texture2D" uid="uid://ckniyklqmwik" path="res://Assets/Bonecos/Badalo.png" id="7_d7ict"]
 [ext_resource type="Texture2D" uid="uid://ctxlyub6q3p7r" path="res://Assets/Bonecos/caxeiraa 1.png" id="7_vrshb"]
+[ext_resource type="Script" uid="uid://b21h50vip7e8p" path="res://object_3.gd" id="8_vklba"]
 [ext_resource type="Texture2D" uid="uid://dl73s4p7ad3s1" path="res://Assets/Bonecos/bandeirinhas são joão.png" id="8_yfsv1"]
+[ext_resource type="Script" uid="uid://h7f663i31iwk" path="res://button.gd" id="9_sm2fb"]
 [ext_resource type="Texture2D" uid="uid://cpen1olxllvwl" path="res://Assets/Bonecos/7.png" id="10_yfsv1"]
+[ext_resource type="Script" uid="uid://vbtwpfwhufgq" path="res://object_4.gd" id="12_f62w7"]
+[ext_resource type="Script" uid="uid://vhvbvlxe8yf6" path="res://object_5.gd" id="14_ly1yb"]
+[ext_resource type="Texture2D" uid="uid://3dk3b6rfo8pp" path="res://Assets/Bonecos/Bandeira do Divino.png" id="15_bvvyx"]
+[ext_resource type="Script" uid="uid://ci1f47hqwwvky" path="res://object_6.gd" id="16_40wbq"]
+[ext_resource type="Script" uid="uid://chn2yegbg2tmm" path="res://object_7.gd" id="18_iic7t"]
+[ext_resource type="Script" uid="uid://bvvepfc4h53xg" path="res://object_8.gd" id="20_oci1p"]
+[ext_resource type="Script" uid="uid://bspu0dketbskt" path="res://object_9.gd" id="22_f4nio"]
+[ext_resource type="Texture2D" uid="uid://g8r4yuw1bms" path="res://Assets/Bonecos/Vela.png" id="23_3ceqw"]
+[ext_resource type="Script" uid="uid://bn8mghvftrwhd" path="res://object_10.gd" id="24_mqgir"]
+[ext_resource type="AudioStream" uid="uid://bqmpwnrvel8dp" path="res://Assets/Sons/wrong_sound.mp3" id="25_3v0j5"]
+[ext_resource type="AudioStream" uid="uid://d1lke0rf0uvy7" path="res://Assets/Sons/correct_sound.mp3" id="26_6go4s"]
 
-[node name="Node2D" instance=ExtResource("1_5qtnw")]
+[node name="Node2D" type="Node2D"]
 metadata/_edit_horizontal_guides_ = [-1.0]
 
-[node name="Cenário" parent="." index="1"]
-offset_left = 8.0
+[node name="Sprite2D" type="Sprite2D" parent="."]
+
+[node name="Cenário" type="TextureRect" parent="."]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 3.0
 offset_top = 9.0
 offset_right = 1155.0
-offset_bottom = 650.0
+offset_bottom = 646.0
+grow_horizontal = 2
+grow_vertical = 2
 texture = ExtResource("2_3lgox")
+expand_mode = 2
 
-[node name="Object1" parent="." index="2"]
+[node name="Object1" type="TextureButton" parent="."]
 offset_left = 224.0
 offset_top = 414.0
 offset_right = 1412.0
 offset_bottom = 1950.0
+scale = Vector2(0.1, 0.1)
 texture_normal = ExtResource("3_xgrfh")
+stretch_mode = 0
+script = ExtResource("3_d4fdt")
 
-[node name="Object2" parent="." index="3"]
+[node name="Object2" type="TextureButton" parent="."]
 offset_left = 500.0
 offset_top = 61.0
 offset_right = 1570.0
@@ -36,15 +62,20 @@ offset_bottom = 1011.0
 scale = Vector2(0.1, 0.1)
 texture_normal = ExtResource("4_1cffv")
 stretch_mode = 0
+script = ExtResource("5_oiuy4")
+is_correct_object = true
 
-[node name="Object3" parent="." index="4"]
+[node name="Object3" type="TextureButton" parent="."]
 offset_left = 818.0
 offset_top = 297.0
 offset_right = 1178.0
 offset_bottom = 658.0
+scale = Vector2(0.3, 0.3)
+texture_normal = ExtResource("7_d7ict")
+script = ExtResource("8_vklba")
 is_correct_object = true
 
-[node name="Object4" parent="." index="5"]
+[node name="Object4" type="TextureButton" parent="."]
 anchors_preset = 8
 anchor_left = 0.5
 anchor_top = 0.5
@@ -59,8 +90,9 @@ grow_vertical = 2
 scale = Vector2(0.1, 0.1)
 texture_normal = ExtResource("4_vrshb")
 stretch_mode = 0
+script = ExtResource("12_f62w7")
 
-[node name="Object5" parent="." index="6"]
+[node name="Object5" type="TextureButton" parent="."]
 offset_left = 609.0
 offset_top = 178.0
 offset_right = 1689.0
@@ -68,16 +100,20 @@ offset_bottom = 1528.0
 scale = Vector2(0.1, 0.1)
 texture_normal = ExtResource("4_qyqpt")
 stretch_mode = 0
+script = ExtResource("14_ly1yb")
 
-[node name="Object6" parent="." index="7"]
-offset_left = 145.0
-offset_top = 203.0
-offset_right = 1315.0
-offset_bottom = 983.0
+[node name="Object6" type="TextureButton" parent="."]
+offset_left = 152.0
+offset_top = 208.0
+offset_right = 1322.0
+offset_bottom = 988.0
 scale = Vector2(0.1, 0.1)
+texture_normal = ExtResource("15_bvvyx")
 stretch_mode = 0
+script = ExtResource("16_40wbq")
+is_correct_object = true
 
-[node name="Object7" parent="." index="8"]
+[node name="Object7" type="TextureButton" parent="."]
 offset_left = 977.0
 offset_top = 504.0
 offset_right = 2327.0
@@ -85,8 +121,9 @@ offset_bottom = 1994.0
 scale = Vector2(0.1, 0.1)
 texture_normal = ExtResource("4_taqb3")
 stretch_mode = 0
+script = ExtResource("18_iic7t")
 
-[node name="Object8" parent="." index="9"]
+[node name="Object8" type="TextureButton" parent="."]
 offset_left = 318.0
 offset_top = -60.0
 offset_right = 2408.0
@@ -94,8 +131,9 @@ offset_bottom = 1690.0
 scale = Vector2(0.1, 0.1)
 texture_normal = ExtResource("8_yfsv1")
 stretch_mode = 0
+script = ExtResource("20_oci1p")
 
-[node name="Object9" parent="." index="10"]
+[node name="Object9" type="TextureButton" parent="."]
 offset_left = 25.0
 offset_top = 367.0
 offset_right = 2545.0
@@ -103,16 +141,71 @@ offset_bottom = 3315.0
 scale = Vector2(0.1, 0.1)
 texture_normal = ExtResource("7_vrshb")
 stretch_mode = 0
+script = ExtResource("22_f4nio")
 
-[node name="Object10" parent="." index="11"]
+[node name="Object10" type="TextureButton" parent="."]
 offset_left = 422.0
 offset_top = 406.0
 offset_right = 856.0
 offset_bottom = 816.0
+scale = Vector2(0.3, 0.3)
+texture_normal = ExtResource("23_3ceqw")
+script = ExtResource("24_mqgir")
 
-[node name="TextureRect" type="TextureRect" parent="InfoCard" index="2"]
+[node name="InfoCard" type="Panel" parent="."]
+visible = false
+offset_left = 262.0
+offset_top = 262.0
+offset_right = 527.0
+offset_bottom = 328.0
+
+[node name="Label" type="Label" parent="InfoCard"]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 23.0
+text = "Parabéns, encontrou o correto!"
+
+[node name="Button" type="Button" parent="InfoCard"]
+layout_mode = 0
+offset_left = 273.0
+offset_top = -51.0
+offset_right = 333.0
+offset_bottom = -20.0
+text = "Fechar
+"
+script = ExtResource("9_sm2fb")
+
+[node name="TextureRect" type="TextureRect" parent="InfoCard"]
 layout_mode = 0
 offset_right = 1080.0
 offset_bottom = 1350.0
 scale = Vector2(0.3, 0.3)
 texture = ExtResource("10_yfsv1")
+
+[node name="AudioPlayerWrong" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("25_3v0j5")
+
+[node name="AudioPlayerCorrect" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("26_6go4s")
+
+[connection signal="mouse_entered" from="Object1" to="Object1" method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="Object1" to="Object1" method="_on_mouse_exited"]
+[connection signal="mouse_entered" from="Object2" to="Object2" method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="Object2" to="Object2" method="_on_mouse_exited"]
+[connection signal="mouse_entered" from="Object3" to="Object3" method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="Object3" to="Object3" method="_on_mouse_exited"]
+[connection signal="mouse_entered" from="Object4" to="Object4" method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="Object4" to="Object4" method="_on_mouse_exited"]
+[connection signal="mouse_entered" from="Object5" to="Object5" method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="Object5" to="Object5" method="_on_mouse_exited"]
+[connection signal="mouse_entered" from="Object6" to="Object6" method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="Object6" to="Object6" method="_on_mouse_exited"]
+[connection signal="mouse_entered" from="Object7" to="Object7" method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="Object7" to="Object7" method="_on_mouse_exited"]
+[connection signal="mouse_entered" from="Object8" to="Object8" method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="Object8" to="Object8" method="_on_mouse_exited"]
+[connection signal="mouse_entered" from="Object9" to="Object9" method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="Object9" to="Object9" method="_on_mouse_exited"]
+[connection signal="mouse_entered" from="Object10" to="Object10" method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="Object10" to="Object10" method="_on_mouse_exited"]
+[connection signal="pressed" from="InfoCard/Button" to="InfoCard/Button" method="_on_pressed"]

@@ -1,7 +1,8 @@
-[gd_scene load_steps=25 format=3 uid="uid://cjq48saf4fkmk"]
+[gd_scene load_steps=26 format=3 uid="uid://cjq48saf4fkmk"]
 
 [ext_resource type="Texture2D" uid="uid://b68j0ebwmtw62" path="res://Assets/Paróquia.PNG" id="1_0odxb"]
 [ext_resource type="Texture2D" uid="uid://dy6uxe20y03uu" path="res://Assets/Bonecos/Cazumb├í.png" id="1_8niev"]
+[ext_resource type="Script" uid="uid://cp264r0h3avwi" path="res://main.gd" id="1_lswn8"]
 [ext_resource type="Script" uid="uid://csb065rye17ig" path="res://object_1.gd" id="1_n2xsb"]
 [ext_resource type="Script" uid="uid://bi1ycgwn3c5pl" path="res://object_2.gd" id="2_mmwfu"]
 [ext_resource type="Script" uid="uid://b21h50vip7e8p" path="res://object_3.gd" id="3_ant2b"]
@@ -26,6 +27,7 @@
 [ext_resource type="Script" uid="uid://bn8mghvftrwhd" path="res://object_10.gd" id="20_lswn8"]
 
 [node name="Node2D" type="Node2D"]
+script = ExtResource("1_lswn8")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 

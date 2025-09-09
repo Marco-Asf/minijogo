@@ -1,0 +1,111 @@
+[gd_scene load_steps=10 format=3 uid="uid://b431xuk8y2lw1"]
+
+[ext_resource type="Texture2D" uid="uid://bta8384oucffk" path="res://Assets/Fundos/cenário níveis.png" id="1_il3u1"]
+[ext_resource type="Script" uid="uid://cyckrnes4i00n" path="res://level_select.gd" id="1_vomi7"]
+[ext_resource type="Texture2D" uid="uid://c1bih0kxe6ywx" path="res://Assets/Fundos/quadrado fase verde.png" id="3_1iyaf"]
+[ext_resource type="Texture2D" uid="uid://d0cw8yam28v5q" path="res://Assets/Fundos/sair do jogo.png" id="3_apu6u"]
+[ext_resource type="Script" uid="uid://lm8gnmyvu52t" path="res://texture_button.gd" id="4_bv7n5"]
+[ext_resource type="Texture2D" uid="uid://dldk4dxvtwc6f" path="res://Assets/Fundos/quadrado fase azul.png" id="5_1wnlg"]
+[ext_resource type="Texture2D" uid="uid://dyhugv3os4q00" path="res://Assets/Fundos/quadrado fase vermelho.png" id="6_1iyaf"]
+[ext_resource type="Texture2D" uid="uid://xujy7wfascby" path="res://Assets/Fundos/cadeado fases.png" id="6_8qr5y"]
+[ext_resource type="Script" uid="uid://cmvit0l4lhpux" path="res://exitbutton.gd" id="8_1wnlg"]
+
+[node name="LevelSelect" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 4
+script = ExtResource("1_vomi7")
+
+[node name="background" type="TextureRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("1_il3u1")
+expand_mode = 2
+
+[node name="Levels" type="Control" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -725.0
+offset_top = -160.0
+offset_right = 5035.0
+offset_bottom = 920.0
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(0.25, 0.25)
+
+[node name="TextureButton" type="TextureButton" parent="Levels"]
+layout_mode = 0
+offset_left = 596.0
+offset_top = 88.0
+offset_right = 2516.0
+offset_bottom = 1204.0
+pivot_offset = Vector2(980, 480)
+size_flags_horizontal = 0
+size_flags_vertical = 8
+texture_normal = ExtResource("3_1iyaf")
+stretch_mode = 5
+script = ExtResource("4_bv7n5")
+
+[node name="TextureRect" type="TextureRect" parent="Levels/TextureButton"]
+layout_mode = 0
+offset_left = -89.0
+offset_top = 32.0
+offset_right = -33.0
+offset_bottom = 97.0
+
+[node name="TextureButton2" type="TextureButton" parent="Levels"]
+layout_mode = 2
+offset_left = 1860.0
+offset_top = 104.0
+offset_right = 3780.0
+offset_bottom = 1184.0
+texture_normal = ExtResource("5_1wnlg")
+stretch_mode = 0
+
+[node name="TextureRect" type="TextureRect" parent="Levels/TextureButton2"]
+layout_mode = 0
+offset_left = 76.0
+offset_top = -52.0
+offset_right = 1996.0
+offset_bottom = 1028.0
+texture = ExtResource("6_8qr5y")
+
+[node name="TextureButton3" type="TextureButton" parent="Levels"]
+layout_mode = 2
+offset_left = 3164.0
+offset_top = 112.0
+offset_right = 5084.0
+offset_bottom = 1192.0
+texture_normal = ExtResource("6_1iyaf")
+stretch_mode = 5
+
+[node name="TextureRect" type="TextureRect" parent="Levels/TextureButton3"]
+layout_mode = 0
+offset_left = 80.0
+offset_top = -60.0
+offset_right = 2000.0
+offset_bottom = 1020.0
+texture = ExtResource("6_8qr5y")
+
+[node name="exitbutton" type="TextureButton" parent="."]
+layout_mode = 0
+offset_left = 916.0
+offset_top = 505.0
+offset_right = 1229.0
+offset_bottom = 687.0
+texture_normal = ExtResource("3_apu6u")
+ignore_texture_size = true
+stretch_mode = 0
+script = ExtResource("8_1wnlg")

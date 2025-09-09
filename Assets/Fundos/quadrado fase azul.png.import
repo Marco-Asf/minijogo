@@ -2,12 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://c4lm0inl4yt46"
-valid=false
+uid="uid://dldk4dxvtwc6f"
+path="res://.godot/imported/quadrado fase azul.png-cbd1bb94c2a285be04e4c9554af9fdcc.ctex"
+metadata={
+"vram_texture": false
+}
 
 [deps]
 
-source_file="res://Assets/Fundos/Magno roots.png"
+source_file="res://Assets/Fundos/quadrado fase azul.png"
+dest_files=["res://.godot/imported/quadrado fase azul.png-cbd1bb94c2a285be04e4c9554af9fdcc.ctex"]
 
 [params]
 
