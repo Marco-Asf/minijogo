@@ -1,12 +1,14 @@
-[gd_scene load_steps=26 format=3 uid="uid://cjq48saf4fkmk"]
+[gd_scene load_steps=28 format=3 uid="uid://cjq48saf4fkmk"]
 
 [ext_resource type="Texture2D" uid="uid://b68j0ebwmtw62" path="res://Assets/Paróquia.PNG" id="1_0odxb"]
 [ext_resource type="Texture2D" uid="uid://dy6uxe20y03uu" path="res://Assets/Bonecos/Cazumb├í.png" id="1_8niev"]
 [ext_resource type="Script" uid="uid://cp264r0h3avwi" path="res://main.gd" id="1_lswn8"]
 [ext_resource type="Script" uid="uid://csb065rye17ig" path="res://object_1.gd" id="1_n2xsb"]
 [ext_resource type="Script" uid="uid://bi1ycgwn3c5pl" path="res://object_2.gd" id="2_mmwfu"]
+[ext_resource type="Texture2D" uid="uid://b6jjipnog7wbc" path="res://Assets/Fundos/botao voltar menu de fases.png" id="3_a6jrf"]
 [ext_resource type="Script" uid="uid://b21h50vip7e8p" path="res://object_3.gd" id="3_ant2b"]
-[ext_resource type="Texture2D" uid="uid://chgoxsk6yfsu2" path="res://Assets/Bonecos/Boina.png" id="3_jgcsn"]
+[ext_resource type="Script" uid="uid://dkay7e815rx5u" path="res://exitbuttonfase1.gd" id="4_xuqvo"]
+[ext_resource type="Texture2D" uid="uid://bta67p13mg7vq" path="res://Assets/Bonecos/pedro palhaço bumba-meu-boi.png" id="5_0odxb"]
 [ext_resource type="Texture2D" uid="uid://ckniyklqmwik" path="res://Assets/Bonecos/Badalo.png" id="5_gt7ck"]
 [ext_resource type="Script" uid="uid://h7f663i31iwk" path="res://button.gd" id="7_14rsb"]
 [ext_resource type="Texture2D" uid="uid://c5pnau6kgu22o" path="res://Assets/Bonecos/Matraca.png" id="7_efxa6"]
@@ -17,14 +19,14 @@
 [ext_resource type="Script" uid="uid://vhvbvlxe8yf6" path="res://object_5.gd" id="10_ycdy4"]
 [ext_resource type="Texture2D" uid="uid://3dk3b6rfo8pp" path="res://Assets/Bonecos/Bandeira do Divino.png" id="11_vivmo"]
 [ext_resource type="Script" uid="uid://ci1f47hqwwvky" path="res://object_6.gd" id="12_2cqfq"]
-[ext_resource type="Texture2D" uid="uid://bmrfka4ckkcc3" path="res://Assets/Bonecos/Radiola.png" id="13_yaehf"]
 [ext_resource type="Script" uid="uid://chn2yegbg2tmm" path="res://object_7.gd" id="14_074og"]
-[ext_resource type="Texture2D" uid="uid://llqhrsu6qxd8" path="res://Assets/Bonecos/Pomba do divino.png" id="15_cegan"]
+[ext_resource type="Texture2D" uid="uid://suguq7ckds5t" path="res://Assets/Bonecos/chapéu bordado.png" id="15_lswn8"]
 [ext_resource type="Script" uid="uid://bvvepfc4h53xg" path="res://object_8.gd" id="16_82xsv"]
-[ext_resource type="Texture2D" uid="uid://dyoxe4upfjd3l" path="res://Assets/Bonecos/Disco.png" id="17_d13ii"]
+[ext_resource type="Texture2D" uid="uid://ct8sh6xxrxi2q" path="res://Assets/Bonecos/careta cazumbá.png" id="17_a6jrf"]
 [ext_resource type="Script" uid="uid://bspu0dketbskt" path="res://object_9.gd" id="18_1u8w0"]
-[ext_resource type="Texture2D" uid="uid://g8r4yuw1bms" path="res://Assets/Bonecos/Vela.png" id="19_0odxb"]
+[ext_resource type="Texture2D" uid="uid://c4jnmlg88mk7s" path="res://Assets/Bonecos/miolo do boi.png" id="19_0odxb"]
 [ext_resource type="Script" uid="uid://bn8mghvftrwhd" path="res://object_10.gd" id="20_lswn8"]
+[ext_resource type="Texture2D" uid="uid://j4dhui2u5iow" path="res://Assets/Bonecos/pandeiro.png" id="21_lswn8"]
 
 [node name="Node2D" type="Node2D"]
 script = ExtResource("1_lswn8")
@@ -35,50 +37,60 @@ script = ExtResource("1_lswn8")
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
-offset_left = 9.0
-offset_top = 7.0
-offset_right = 1156.0
-offset_bottom = 648.0
+offset_left = 3.0
+offset_top = 3.0
+offset_right = 1150.0
+offset_bottom = 644.0
 grow_horizontal = 2
 grow_vertical = 2
 texture = ExtResource("1_0odxb")
 expand_mode = 2
 
+[node name="exitbutton" type="TextureButton" parent="Cenário"]
+offset_left = -47.0
+offset_top = 545.0
+offset_right = 165.0
+offset_bottom = 655.0
+texture_normal = ExtResource("3_a6jrf")
+ignore_texture_size = true
+stretch_mode = 0
+script = ExtResource("4_xuqvo")
+
 [node name="Object1" type="TextureButton" parent="."]
-offset_left = 913.0
-offset_top = 304.0
-offset_right = 2101.0
-offset_bottom = 1840.0
+offset_left = 1061.0
+offset_top = 308.0
+offset_right = 2249.0
+offset_bottom = 1844.0
 scale = Vector2(0.1, 0.1)
 texture_normal = ExtResource("1_8niev")
 stretch_mode = 0
 script = ExtResource("1_n2xsb")
 
 [node name="Object2" type="TextureButton" parent="."]
-offset_left = 203.0
-offset_top = 489.0
-offset_right = 641.0
-offset_bottom = 797.0
-scale = Vector2(0.3, 0.3)
-texture_normal = ExtResource("3_jgcsn")
+offset_left = 123.0
+offset_top = 384.0
+offset_right = 1203.0
+offset_bottom = 1734.0
+scale = Vector2(0.1, 0.1)
+texture_normal = ExtResource("5_0odxb")
 script = ExtResource("2_mmwfu")
 is_correct_object = true
 
 [node name="Object3" type="TextureButton" parent="."]
-offset_left = 91.0
-offset_top = 494.0
-offset_right = 451.0
-offset_bottom = 855.0
+offset_left = 250.0
+offset_top = 59.0
+offset_right = 610.0
+offset_bottom = 420.0
 scale = Vector2(0.3, 0.3)
 texture_normal = ExtResource("5_gt7ck")
 script = ExtResource("3_ant2b")
 
 [node name="Object4" type="TextureButton" parent="."]
-offset_left = 437.0
-offset_top = 493.0
-offset_right = 875.0
-offset_bottom = 838.0
-scale = Vector2(0.3, 0.3)
+offset_left = 525.0
+offset_top = 581.0
+offset_right = 963.0
+offset_bottom = 926.0
+scale = Vector2(0.2, 0.2)
 texture_normal = ExtResource("7_efxa6")
 script = ExtResource("8_dg77c")
 
@@ -101,21 +113,22 @@ texture_normal = ExtResource("11_vivmo")
 script = ExtResource("12_2cqfq")
 
 [node name="Object7" type="TextureButton" parent="."]
-offset_left = 670.0
-offset_top = 461.0
-offset_right = 1147.0
-offset_bottom = 878.0
-scale = Vector2(0.3, 0.3)
-texture_normal = ExtResource("13_yaehf")
+offset_left = 802.0
+offset_top = 162.0
+offset_right = 1882.0
+offset_bottom = 1512.0
+scale = Vector2(0.1, 0.1)
+texture_normal = ExtResource("15_lswn8")
 script = ExtResource("14_074og")
 
 [node name="Object8" type="TextureButton" parent="."]
-offset_left = 34.0
-offset_top = 286.0
-offset_right = 512.0
-offset_bottom = 639.0
-scale = Vector2(0.33, 0.33)
-texture_normal = ExtResource("15_cegan")
+offset_left = 832.0
+offset_top = 63.0
+offset_right = 1912.0
+offset_bottom = 1413.0
+scale = Vector2(0.1, 0.1)
+texture_normal = ExtResource("17_a6jrf")
+stretch_mode = 0
 script = ExtResource("16_82xsv")
 
 [node name="Object9" type="TextureButton" parent="."]
@@ -123,17 +136,17 @@ offset_left = 461.0
 offset_top = 178.0
 offset_right = 865.0
 offset_bottom = 480.0
-scale = Vector2(0.3, 0.3)
-texture_normal = ExtResource("17_d13ii")
+scale = Vector2(0.1, 0.1)
+texture_normal = ExtResource("19_0odxb")
 script = ExtResource("18_1u8w0")
 
 [node name="Object10" type="TextureButton" parent="."]
-offset_left = 240.0
-offset_top = 356.0
-offset_right = 674.0
-offset_bottom = 766.0
-scale = Vector2(0.3, 0.3)
-texture_normal = ExtResource("19_0odxb")
+offset_left = 208.0
+offset_top = 523.0
+offset_right = 1288.0
+offset_bottom = 1873.0
+scale = Vector2(0.1, 0.1)
+texture_normal = ExtResource("21_lswn8")
 script = ExtResource("20_lswn8")
 
 [node name="InfoCard" type="Panel" parent="."]

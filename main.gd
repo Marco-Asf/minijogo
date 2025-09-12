@@ -1,4 +1,5 @@
-extends Control
+extends Node2D
+
 # (se o nó raiz da cena for Node2D, troque para 'extends Node2D')
 
 const SAVE_PATH := "user://savegame.save"

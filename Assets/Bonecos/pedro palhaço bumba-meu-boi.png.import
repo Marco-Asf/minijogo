@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://j4dhui2u5iow"
-path="res://.godot/imported/pandeiro.png-c2ed9532a7f0979980f63f449470245e.ctex"
+uid="uid://bta67p13mg7vq"
+path="res://.godot/imported/pedro palhaço bumba-meu-boi.png-fe6cf0bf11144afa3c08e7d079c4b08f.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/Bonecos/pandeiro.png"
-dest_files=["res://.godot/imported/pandeiro.png-c2ed9532a7f0979980f63f449470245e.ctex"]
+source_file="res://Assets/Bonecos/pedro palhaço bumba-meu-boi.png"
+dest_files=["res://.godot/imported/pedro palhaço bumba-meu-boi.png-fe6cf0bf11144afa3c08e7d079c4b08f.ctex"]
 
 [params]
 

@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://j4dhui2u5iow"
-path="res://.godot/imported/pandeiro.png-c2ed9532a7f0979980f63f449470245e.ctex"
+uid="uid://c4jnmlg88mk7s"
+path="res://.godot/imported/miolo do boi.png-4828b1d31549afdac454c4caef0facf9.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/Bonecos/pandeiro.png"
-dest_files=["res://.godot/imported/pandeiro.png-c2ed9532a7f0979980f63f449470245e.ctex"]
+source_file="res://Assets/Bonecos/miolo do boi.png"
+dest_files=["res://.godot/imported/miolo do boi.png-4828b1d31549afdac454c4caef0facf9.ctex"]
 
 [params]
 

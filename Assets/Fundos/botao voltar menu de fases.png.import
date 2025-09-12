@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://j4dhui2u5iow"
-path="res://.godot/imported/pandeiro.png-c2ed9532a7f0979980f63f449470245e.ctex"
+uid="uid://b6jjipnog7wbc"
+path="res://.godot/imported/botao voltar menu de fases.png-35bccb11229dc3e885f376bac3583a8d.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/Bonecos/pandeiro.png"
-dest_files=["res://.godot/imported/pandeiro.png-c2ed9532a7f0979980f63f449470245e.ctex"]
+source_file="res://Assets/Fundos/botao voltar menu de fases.png"
+dest_files=["res://.godot/imported/botao voltar menu de fases.png-35bccb11229dc3e885f376bac3583a8d.ctex"]
 
 [params]
 

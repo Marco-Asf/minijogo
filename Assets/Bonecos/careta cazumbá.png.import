@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://j4dhui2u5iow"
-path="res://.godot/imported/pandeiro.png-c2ed9532a7f0979980f63f449470245e.ctex"
+uid="uid://ct8sh6xxrxi2q"
+path="res://.godot/imported/careta cazumbá.png-8bbb086d0417f9598a5118be31c950e5.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/Bonecos/pandeiro.png"
-dest_files=["res://.godot/imported/pandeiro.png-c2ed9532a7f0979980f63f449470245e.ctex"]
+source_file="res://Assets/Bonecos/careta cazumbá.png"
+dest_files=["res://.godot/imported/careta cazumbá.png-8bbb086d0417f9598a5118be31c950e5.ctex"]
 
 [params]
 

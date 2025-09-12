@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://j4dhui2u5iow"
-path="res://.godot/imported/pandeiro.png-c2ed9532a7f0979980f63f449470245e.ctex"
+uid="uid://suguq7ckds5t"
+path="res://.godot/imported/chapéu bordado.png-e5a321827238fedf81afb8f214b0431b.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/Bonecos/pandeiro.png"
-dest_files=["res://.godot/imported/pandeiro.png-c2ed9532a7f0979980f63f449470245e.ctex"]
+source_file="res://Assets/Bonecos/chapéu bordado.png"
+dest_files=["res://.godot/imported/chapéu bordado.png-e5a321827238fedf81afb8f214b0431b.ctex"]
 
 [params]
 
