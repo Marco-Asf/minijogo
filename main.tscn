@@ -1,4 +1,4 @@
-[gd_scene load_steps=28 format=3 uid="uid://cjq48saf4fkmk"]
+[gd_scene load_steps=40 format=3 uid="uid://cjq48saf4fkmk"]
 
 [ext_resource type="Texture2D" uid="uid://b68j0ebwmtw62" path="res://Assets/Paróquia.PNG" id="1_0odxb"]
 [ext_resource type="Texture2D" uid="uid://dy6uxe20y03uu" path="res://Assets/Bonecos/Cazumb├í.png" id="1_8niev"]
@@ -27,6 +27,18 @@
 [ext_resource type="Texture2D" uid="uid://c4jnmlg88mk7s" path="res://Assets/Bonecos/miolo do boi.png" id="19_0odxb"]
 [ext_resource type="Script" uid="uid://bn8mghvftrwhd" path="res://object_10.gd" id="20_lswn8"]
 [ext_resource type="Texture2D" uid="uid://j4dhui2u5iow" path="res://Assets/Bonecos/pandeiro.png" id="21_lswn8"]
+[ext_resource type="Texture2D" uid="uid://ciy2rihnaijxe" path="res://Assets/Bonecos/flâmula caxeiras.png" id="25_xuqvo"]
+[ext_resource type="Texture2D" uid="uid://q6iu1stdayip" path="res://Assets/Bonecos/fitas.png" id="26_qsp4k"]
+[ext_resource type="Texture2D" uid="uid://dl73s4p7ad3s1" path="res://Assets/Bonecos/bandeirinhas são joão.png" id="27_htxhm"]
+[ext_resource type="Texture2D" uid="uid://chgoxsk6yfsu2" path="res://Assets/Bonecos/Boina.png" id="28_jq2sk"]
+[ext_resource type="Texture2D" uid="uid://de1cukvcx8pb2" path="res://Assets/Bonecos/Vitrola.png" id="29_come4"]
+[ext_resource type="Texture2D" uid="uid://ch8xtuk6wx1i6" path="res://Assets/Bonecos/Tambor.png" id="30_h8e4i"]
+[ext_resource type="Texture2D" uid="uid://g8r4yuw1bms" path="res://Assets/Bonecos/Vela.png" id="31_4lmeg"]
+[ext_resource type="Texture2D" uid="uid://c257n55oft80q" path="res://Assets/Bonecos/tambor 1.png" id="31_jq2sk"]
+[ext_resource type="Texture2D" uid="uid://dyoxe4upfjd3l" path="res://Assets/Bonecos/Disco.png" id="32_0cp0l"]
+[ext_resource type="Texture2D" uid="uid://b6e6d6j0g7bwp" path="res://Assets/Bonecos/tambor 2.png" id="32_4k2k6"]
+[ext_resource type="Texture2D" uid="uid://cj6fj5u08yftg" path="res://Assets/Bonecos/chocalho.png" id="38_d2t1y"]
+[ext_resource type="Texture2D" uid="uid://djkj3fxqvvlrl" path="res://Assets/Bonecos/caxeira 2.png" id="39_gngh3"]
 
 [node name="Node2D" type="Node2D"]
 script = ExtResource("1_lswn8")
@@ -47,6 +59,7 @@ texture = ExtResource("1_0odxb")
 expand_mode = 2
 
 [node name="exitbutton" type="TextureButton" parent="Cenário"]
+layout_mode = 0
 offset_left = -47.0
 offset_top = 545.0
 offset_right = 165.0
@@ -57,96 +70,220 @@ stretch_mode = 0
 script = ExtResource("4_xuqvo")
 
 [node name="Object1" type="TextureButton" parent="."]
-offset_left = 1061.0
-offset_top = 308.0
-offset_right = 2249.0
-offset_bottom = 1844.0
+offset_left = 501.0
+offset_top = 280.0
+offset_right = 939.0
+offset_bottom = 706.0
 scale = Vector2(0.1, 0.1)
 texture_normal = ExtResource("1_8niev")
 stretch_mode = 0
 script = ExtResource("1_n2xsb")
 
 [node name="Object2" type="TextureButton" parent="."]
-offset_left = 123.0
-offset_top = 384.0
-offset_right = 1203.0
-offset_bottom = 1734.0
-scale = Vector2(0.1, 0.1)
+offset_left = 840.0
+offset_top = 505.0
+offset_right = 1920.0
+offset_bottom = 1855.0
+scale = Vector2(0.05, 0.05)
 texture_normal = ExtResource("5_0odxb")
 script = ExtResource("2_mmwfu")
 is_correct_object = true
 
 [node name="Object3" type="TextureButton" parent="."]
-offset_left = 250.0
-offset_top = 59.0
-offset_right = 610.0
-offset_bottom = 420.0
-scale = Vector2(0.3, 0.3)
+offset_left = 646.0
+offset_top = 638.0
+offset_right = 1006.0
+offset_bottom = 999.0
+rotation = -1.39669
+scale = Vector2(0.1, 0.1)
 texture_normal = ExtResource("5_gt7ck")
 script = ExtResource("3_ant2b")
 
 [node name="Object4" type="TextureButton" parent="."]
-offset_left = 525.0
-offset_top = 581.0
-offset_right = 963.0
-offset_bottom = 926.0
-scale = Vector2(0.2, 0.2)
+offset_left = 1029.0
+offset_top = 235.0
+offset_right = 2140.0
+offset_bottom = 1077.0
+rotation = -1.60585
+scale = Vector2(0.02, 0.02)
 texture_normal = ExtResource("7_efxa6")
+stretch_mode = 0
 script = ExtResource("8_dg77c")
 
 [node name="Object5" type="TextureButton" parent="."]
-offset_left = 592.0
-offset_top = 96.0
-offset_right = 1126.0
-offset_bottom = 487.0
-scale = Vector2(0.4, 0.4)
+offset_left = 102.0
+offset_top = 428.0
+offset_right = 636.0
+offset_bottom = 819.0
+scale = Vector2(0.3, 0.3)
 texture_normal = ExtResource("9_dg77c")
 script = ExtResource("10_ycdy4")
 
 [node name="Object6" type="TextureButton" parent="."]
-offset_left = 203.0
-offset_top = 150.0
-offset_right = 679.0
-offset_bottom = 521.0
-scale = Vector2(0.4, 0.4)
+offset_left = 1079.0
+offset_top = 321.0
+offset_right = 1789.0
+offset_bottom = 871.0
+scale = Vector2(0.1, 0.1)
 texture_normal = ExtResource("11_vivmo")
+stretch_mode = 0
 script = ExtResource("12_2cqfq")
 
 [node name="Object7" type="TextureButton" parent="."]
-offset_left = 802.0
-offset_top = 162.0
-offset_right = 1882.0
-offset_bottom = 1512.0
-scale = Vector2(0.1, 0.1)
+offset_left = 720.0
+offset_top = 260.0
+offset_right = 2020.0
+offset_bottom = 1610.0
+scale = Vector2(0.05, 0.05)
 texture_normal = ExtResource("15_lswn8")
+stretch_mode = 0
 script = ExtResource("14_074og")
 
 [node name="Object8" type="TextureButton" parent="."]
-offset_left = 832.0
-offset_top = 63.0
-offset_right = 1912.0
-offset_bottom = 1413.0
-scale = Vector2(0.1, 0.1)
+offset_left = 925.0
+offset_top = 260.0
+offset_right = 2005.0
+offset_bottom = 1610.0
+scale = Vector2(0.03, 0.03)
 texture_normal = ExtResource("17_a6jrf")
 stretch_mode = 0
 script = ExtResource("16_82xsv")
 
 [node name="Object9" type="TextureButton" parent="."]
-offset_left = 461.0
-offset_top = 178.0
-offset_right = 865.0
-offset_bottom = 480.0
-scale = Vector2(0.1, 0.1)
+offset_left = 1011.0
+offset_top = 377.0
+offset_right = 2091.0
+offset_bottom = 1727.0
+rotation = 0.356122
+scale = Vector2(0.05, 0.05)
 texture_normal = ExtResource("19_0odxb")
 script = ExtResource("18_1u8w0")
 
 [node name="Object10" type="TextureButton" parent="."]
-offset_left = 208.0
-offset_top = 523.0
-offset_right = 1288.0
-offset_bottom = 1873.0
-scale = Vector2(0.1, 0.1)
+offset_left = 898.0
+offset_top = 448.0
+offset_right = 1978.0
+offset_bottom = 1798.0
+rotation = -0.868788
+scale = Vector2(0.03, 0.03)
 texture_normal = ExtResource("21_lswn8")
+script = ExtResource("20_lswn8")
+
+[node name="Object11" type="TextureButton" parent="."]
+offset_left = 295.0
+offset_top = 130.0
+offset_right = 2895.0
+offset_bottom = 3197.0
+scale = Vector2(0.03, 0.03)
+texture_normal = ExtResource("25_xuqvo")
+stretch_mode = 0
+script = ExtResource("20_lswn8")
+
+[node name="Object14" type="TextureButton" parent="."]
+offset_left = 653.0
+offset_top = 167.0
+offset_right = 1733.0
+offset_bottom = 1517.0
+rotation = 0.23516
+scale = Vector2(0.03, 0.03)
+texture_normal = ExtResource("25_xuqvo")
+stretch_mode = 0
+script = ExtResource("20_lswn8")
+
+[node name="Object12" type="TextureButton" parent="."]
+offset_left = 832.0
+offset_top = 326.0
+offset_right = 1912.0
+offset_bottom = 1676.0
+scale = Vector2(0.03, 0.03)
+texture_normal = ExtResource("26_qsp4k")
+stretch_mode = 0
+script = ExtResource("20_lswn8")
+
+[node name="Object13" type="TextureButton" parent="."]
+offset_left = 561.0
+offset_top = 579.0
+offset_right = 1641.0
+offset_bottom = 1929.0
+scale = Vector2(0.03, 0.03)
+texture_normal = ExtResource("26_qsp4k")
+stretch_mode = 0
+script = ExtResource("20_lswn8")
+
+[node name="Object15" type="TextureButton" parent="."]
+offset_left = 481.0
+offset_top = 128.0
+offset_right = 3281.0
+offset_bottom = 1845.0
+scale = Vector2(0.03, 0.03)
+texture_normal = ExtResource("27_htxhm")
+stretch_mode = 0
+script = ExtResource("20_lswn8")
+
+[node name="Object19" type="TextureButton" parent="."]
+offset_left = 21.0
+offset_top = 75.0
+offset_right = 1421.0
+offset_bottom = 1425.0
+rotation = 0.368396
+scale = Vector2(0.03, 0.03)
+texture_normal = ExtResource("27_htxhm")
+stretch_mode = 0
+script = ExtResource("20_lswn8")
+
+[node name="Object16" type="TextureButton" parent="."]
+offset_left = 608.0
+offset_top = 315.0
+offset_right = 2983.0
+offset_bottom = 2252.0
+rotation = 0.6573
+scale = Vector2(0.03, 0.03)
+texture_normal = ExtResource("28_jq2sk")
+stretch_mode = 0
+script = ExtResource("20_lswn8")
+
+[node name="Object17" type="TextureButton" parent="."]
+offset_left = 237.0
+offset_top = 237.0
+offset_right = 2612.0
+offset_bottom = 2174.0
+rotation = 0.0682449
+scale = Vector2(0.03, 0.03)
+texture_normal = ExtResource("29_come4")
+stretch_mode = 0
+script = ExtResource("20_lswn8")
+
+[node name="Object18" type="TextureButton" parent="."]
+offset_left = 30.0
+offset_top = 308.0
+offset_right = 1879.0
+offset_bottom = 1855.0
+rotation = -0.144253
+scale = Vector2(0.03, 0.03)
+texture_normal = ExtResource("30_h8e4i")
+stretch_mode = 0
+script = ExtResource("20_lswn8")
+
+[node name="Object20" type="TextureButton" parent="."]
+offset_left = 348.0
+offset_top = 340.0
+offset_right = 2197.0
+offset_bottom = 1887.0
+rotation = -0.144253
+scale = Vector2(0.03, 0.03)
+texture_normal = ExtResource("31_4lmeg")
+stretch_mode = 0
+script = ExtResource("20_lswn8")
+
+[node name="Object21" type="TextureButton" parent="."]
+offset_left = 173.0
+offset_top = 183.0
+offset_right = 754.0
+offset_bottom = 748.0
+rotation = -0.144253
+scale = Vector2(0.03, 0.03)
+texture_normal = ExtResource("32_0cp0l")
+stretch_mode = 0
 script = ExtResource("20_lswn8")
 
 [node name="InfoCard" type="Panel" parent="."]
@@ -178,6 +315,67 @@ stream = ExtResource("8_bwsjx")
 [node name="AudioPlayerCorrect" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource("9_2dpol")
 
+[node name="ChapéuBordado" type="Sprite2D" parent="."]
+position = Vector2(312, 349)
+rotation = -0.569403
+scale = Vector2(0.0683832, 0.0531096)
+texture = ExtResource("15_lswn8")
+
+[node name="ChapéuBordado2" type="Sprite2D" parent="."]
+position = Vector2(599, 71)
+rotation = -0.569403
+scale = Vector2(0.0294993, 0.0218507)
+texture = ExtResource("15_lswn8")
+
+[node name="Badalo" type="Sprite2D" parent="."]
+position = Vector2(257, 350)
+scale = Vector2(0.0833333, 0.0505541)
+texture = ExtResource("5_gt7ck")
+
+[node name="Tambor1" type="Sprite2D" parent="."]
+position = Vector2(146, 360)
+scale = Vector2(0.0402778, 0.0329629)
+texture = ExtResource("31_jq2sk")
+
+[node name="Tambor2" type="Sprite2D" parent="."]
+position = Vector2(574, 505)
+rotation = -0.317974
+scale = Vector2(0.0293982, 0.0238889)
+texture = ExtResource("32_4k2k6")
+
+[node name="Tambor3" type="Sprite2D" parent="."]
+position = Vector2(622, 270)
+rotation = 0.00994912
+scale = Vector2(0.0164234, 0.014416)
+texture = ExtResource("32_4k2k6")
+
+[node name="Vela" type="Sprite2D" parent="."]
+position = Vector2(665, 238)
+scale = Vector2(0.0864055, 0.0939024)
+texture = ExtResource("31_4lmeg")
+
+[node name="Chocalho" type="Sprite2D" parent="."]
+position = Vector2(832, 408)
+scale = Vector2(0.024537, 0.02)
+texture = ExtResource("38_d2t1y")
+
+[node name="Chocalho2" type="Sprite2D" parent="."]
+position = Vector2(130, 62)
+rotation = 0.912024
+scale = Vector2(0.024537, 0.02)
+texture = ExtResource("38_d2t1y")
+
+[node name="Boina" type="Sprite2D" parent="."]
+position = Vector2(113, 176)
+rotation = -0.068635
+scale = Vector2(0.13242, 0.150974)
+texture = ExtResource("28_jq2sk")
+
+[node name="Caxeira2" type="Sprite2D" parent="."]
+position = Vector2(59, 236)
+scale = Vector2(0.0562839, 0.0647866)
+texture = ExtResource("39_gngh3")
+
 [connection signal="mouse_entered" from="Object1" to="Object1" method="_on_mouse_entered"]
 [connection signal="mouse_exited" from="Object1" to="Object1" method="_on_mouse_exited"]
 [connection signal="mouse_entered" from="Object2" to="Object2" method="_on_mouse_entered"]
@@ -198,4 +396,26 @@ stream = ExtResource("9_2dpol")
 [connection signal="mouse_exited" from="Object9" to="Object9" method="_on_mouse_exited"]
 [connection signal="mouse_entered" from="Object10" to="Object10" method="_on_mouse_entered"]
 [connection signal="mouse_exited" from="Object10" to="Object10" method="_on_mouse_exited"]
+[connection signal="mouse_entered" from="Object11" to="Object11" method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="Object11" to="Object11" method="_on_mouse_exited"]
+[connection signal="mouse_entered" from="Object14" to="Object14" method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="Object14" to="Object14" method="_on_mouse_exited"]
+[connection signal="mouse_entered" from="Object12" to="Object12" method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="Object12" to="Object12" method="_on_mouse_exited"]
+[connection signal="mouse_entered" from="Object13" to="Object13" method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="Object13" to="Object13" method="_on_mouse_exited"]
+[connection signal="mouse_entered" from="Object15" to="Object15" method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="Object15" to="Object15" method="_on_mouse_exited"]
+[connection signal="mouse_entered" from="Object19" to="Object19" method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="Object19" to="Object19" method="_on_mouse_exited"]
+[connection signal="mouse_entered" from="Object16" to="Object16" method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="Object16" to="Object16" method="_on_mouse_exited"]
+[connection signal="mouse_entered" from="Object17" to="Object17" method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="Object17" to="Object17" method="_on_mouse_exited"]
+[connection signal="mouse_entered" from="Object18" to="Object18" method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="Object18" to="Object18" method="_on_mouse_exited"]
+[connection signal="mouse_entered" from="Object20" to="Object20" method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="Object20" to="Object20" method="_on_mouse_exited"]
+[connection signal="mouse_entered" from="Object21" to="Object21" method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="Object21" to="Object21" method="_on_mouse_exited"]
 [connection signal="pressed" from="InfoCard/Button" to="InfoCard/Button" method="_on_pressed"]

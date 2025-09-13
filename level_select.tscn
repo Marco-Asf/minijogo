@@ -109,3 +109,14 @@ texture_normal = ExtResource("3_apu6u")
 ignore_texture_size = true
 stretch_mode = 0
 script = ExtResource("8_1wnlg")
+
+[node name="Label" type="Label" parent="."]
+layout_mode = 0
+offset_left = 358.0
+offset_top = 102.0
+offset_right = 507.0
+offset_bottom = 127.0
+scale = Vector2(3, 3)
+theme_override_colors/font_shadow_color = Color(0.123473, 0.123473, 0.123473, 1)
+theme_override_colors/font_outline_color = Color(0.0936694, 0.0936694, 0.0936694, 1)
+text = "Selecione uma fase"

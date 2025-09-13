@@ -1,4 +1,4 @@
-[gd_scene load_steps=28 format=3 uid="uid://y74gnddw4ua8"]
+[gd_scene load_steps=29 format=3 uid="uid://y74gnddw4ua8"]
 
 [ext_resource type="Texture2D" uid="uid://clkhkfrk3tdoe" path="res://Assets/Fundos/Casa do Divino.PNG" id="2_3lgox"]
 [ext_resource type="Script" uid="uid://csb065rye17ig" path="res://object_1.gd" id="3_d4fdt"]
@@ -27,6 +27,7 @@
 [ext_resource type="AudioStream" uid="uid://d1lke0rf0uvy7" path="res://Assets/Sons/correct_sound.mp3" id="26_6go4s"]
 [ext_resource type="Texture2D" uid="uid://b6jjipnog7wbc" path="res://Assets/Fundos/botao voltar menu de fases.png" id="26_oiuy4"]
 [ext_resource type="Script" uid="uid://dkay7e815rx5u" path="res://exitbuttonfase1.gd" id="27_oiuy4"]
+[ext_resource type="Texture2D" uid="uid://ciy2rihnaijxe" path="res://Assets/Bonecos/flâmula caxeiras.png" id="28_d7ict"]
 
 [node name="Node2D" type="Node2D"]
 metadata/_edit_horizontal_guides_ = [-1.0]
@@ -47,11 +48,11 @@ texture = ExtResource("2_3lgox")
 expand_mode = 2
 
 [node name="Object1" type="TextureButton" parent="."]
-offset_left = 224.0
-offset_top = 414.0
-offset_right = 1412.0
-offset_bottom = 1950.0
-scale = Vector2(0.1, 0.1)
+offset_left = 250.0
+offset_top = 425.0
+offset_right = 2330.0
+offset_bottom = 2805.0
+scale = Vector2(0.05, 0.05)
 texture_normal = ExtResource("3_xgrfh")
 stretch_mode = 0
 script = ExtResource("3_d4fdt")
@@ -68,11 +69,11 @@ script = ExtResource("5_oiuy4")
 is_correct_object = true
 
 [node name="Object3" type="TextureButton" parent="."]
-offset_left = 807.0
-offset_top = 285.0
-offset_right = 1276.0
-offset_bottom = 723.0
-rotation = -0.0606346
+offset_left = 816.0
+offset_top = 298.0
+offset_right = 1243.0
+offset_bottom = 662.0
+rotation = -0.00817793
 scale = Vector2(0.3, 0.3)
 texture_normal = ExtResource("7_d7ict")
 stretch_mode = 0
@@ -85,13 +86,13 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = 538.0
-offset_top = 343.0
-offset_right = 3248.0
-offset_bottom = 3243.0
+offset_left = 764.0
+offset_top = 391.0
+offset_right = 3127.0
+offset_bottom = 3479.0
 grow_horizontal = 2
 grow_vertical = 2
-scale = Vector2(0.1, 0.1)
+scale = Vector2(0.08, 0.08)
 texture_normal = ExtResource("4_vrshb")
 stretch_mode = 0
 script = ExtResource("12_f62w7")
@@ -138,21 +139,21 @@ stretch_mode = 0
 script = ExtResource("20_oci1p")
 
 [node name="Object9" type="TextureButton" parent="."]
-offset_left = 25.0
-offset_top = 367.0
-offset_right = 2545.0
-offset_bottom = 3315.0
+offset_left = 37.0
+offset_top = 371.0
+offset_right = 2337.0
+offset_bottom = 3141.0
 scale = Vector2(0.1, 0.1)
 texture_normal = ExtResource("7_vrshb")
 stretch_mode = 0
 script = ExtResource("22_f4nio")
 
 [node name="Object10" type="TextureButton" parent="."]
-offset_left = 422.0
-offset_top = 406.0
-offset_right = 856.0
-offset_bottom = 816.0
-scale = Vector2(0.3, 0.3)
+offset_left = 446.0
+offset_top = 447.0
+offset_right = 880.0
+offset_bottom = 857.0
+scale = Vector2(0.2, 0.2)
 texture_normal = ExtResource("23_3ceqw")
 script = ExtResource("24_mqgir")
 
@@ -201,6 +202,33 @@ texture_normal = ExtResource("26_oiuy4")
 ignore_texture_size = true
 stretch_mode = 0
 script = ExtResource("27_oiuy4")
+
+[node name="FlâmulaCaxeiras" type="Sprite2D" parent="."]
+position = Vector2(585, 491)
+scale = Vector2(0.0875, 0.0844445)
+texture = ExtResource("28_d7ict")
+
+[node name="BandeirinhasSãoJoão" type="Sprite2D" parent="."]
+position = Vector2(894.893, 231.536)
+rotation = 0.396937
+scale = Vector2(0.077712, 0.0490626)
+texture = ExtResource("8_yfsv1")
+
+[node name="BandeirinhasSãoJoão2" type="Sprite2D" parent="."]
+position = Vector2(34.6162, 183.647)
+rotation = -0.215224
+scale = Vector2(0.0663528, 0.0413129)
+texture = ExtResource("8_yfsv1")
+
+[node name="Vela" type="Sprite2D" parent="."]
+position = Vector2(502, 323)
+scale = Vector2(0.14977, 0.232927)
+texture = ExtResource("23_3ceqw")
+
+[node name="Vela2" type="Sprite2D" parent="."]
+position = Vector2(742, 309)
+scale = Vector2(0.14977, 0.232927)
+texture = ExtResource("23_3ceqw")
 
 [connection signal="mouse_entered" from="Object1" to="Object1" method="_on_mouse_entered"]
 [connection signal="mouse_exited" from="Object1" to="Object1" method="_on_mouse_exited"]
