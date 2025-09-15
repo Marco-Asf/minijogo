@@ -1,0 +1,413 @@
+[gd_scene load_steps=36 format=3 uid="uid://y74gnddw4ua8"]
+
+[ext_resource type="Script" path="res://script fases/magno_roots.gd" id="1_26k50"]
+[ext_resource type="Texture2D" uid="uid://clkhkfrk3tdoe" path="res://Assets/Fundos/Casa do Divino.PNG" id="2_d7p4h"]
+[ext_resource type="Texture2D" uid="uid://b6e6d6j0g7bwp" path="res://Assets/Bonecos/tambor 2.png" id="3_wdfc0"]
+[ext_resource type="Script" path="res://objetos/object_1.gd" id="4_p522h"]
+[ext_resource type="Texture2D" uid="uid://llqhrsu6qxd8" path="res://Assets/Bonecos/Pomba do divino.png" id="5_cn584"]
+[ext_resource type="Script" path="res://objetos/object_2.gd" id="6_ikwkj"]
+[ext_resource type="Texture2D" uid="uid://b6jjipnog7wbc" path="res://Assets/Fundos/botao voltar menu de fases.png" id="7_iqfva"]
+[ext_resource type="Script" path="res://botoes/button.gd" id="8_t1bol"]
+[ext_resource type="Texture2D" uid="uid://c7gqaarx5lj7e" path="res://Assets/cards dos elementos/12.png" id="9_dddct"]
+[ext_resource type="Texture2D" uid="uid://ckniyklqmwik" path="res://Assets/Bonecos/Badalo.png" id="10_jfoxb"]
+[ext_resource type="Script" path="res://objetos/object_3.gd" id="11_25ou8"]
+[ext_resource type="Texture2D" uid="uid://cpen1olxllvwl" path="res://Assets/Bonecos/7.png" id="12_3c1d5"]
+[ext_resource type="Texture2D" uid="uid://djkj3fxqvvlrl" path="res://Assets/Bonecos/caxeira 2.png" id="13_jwvqi"]
+[ext_resource type="Script" path="res://objetos/object_4.gd" id="14_edkas"]
+[ext_resource type="Texture2D" uid="uid://q6iu1stdayip" path="res://Assets/Bonecos/fitas.png" id="15_8tcp0"]
+[ext_resource type="Script" path="res://objetos/object_5.gd" id="16_1n30i"]
+[ext_resource type="Texture2D" uid="uid://3dk3b6rfo8pp" path="res://Assets/Bonecos/Bandeira do Divino.png" id="17_ncamd"]
+[ext_resource type="Script" path="res://objetos/object_6.gd" id="18_gfah4"]
+[ext_resource type="Texture2D" uid="uid://ddfcdcedhfuyj" path="res://Assets/cards dos elementos/10.png" id="19_4qh74"]
+[ext_resource type="Texture2D" uid="uid://c257n55oft80q" path="res://Assets/Bonecos/tambor 1.png" id="20_vpkl3"]
+[ext_resource type="Script" path="res://objetos/object_7.gd" id="21_holr4"]
+[ext_resource type="Texture2D" uid="uid://dl73s4p7ad3s1" path="res://Assets/Bonecos/bandeirinhas são joão.png" id="22_oora2"]
+[ext_resource type="Script" path="res://objetos/object_8.gd" id="23_22nma"]
+[ext_resource type="Texture2D" uid="uid://ctxlyub6q3p7r" path="res://Assets/Bonecos/caxeiraa 1.png" id="24_1lt85"]
+[ext_resource type="Script" path="res://objetos/object_9.gd" id="25_7hoxb"]
+[ext_resource type="Texture2D" uid="uid://g8r4yuw1bms" path="res://Assets/Bonecos/Vela.png" id="26_cocxq"]
+[ext_resource type="Script" path="res://objetos/object_10.gd" id="27_uslaf"]
+[ext_resource type="Texture2D" uid="uid://c5xhs0rissogs" path="res://Assets/cards dos elementos/11.png" id="28_0j8x4"]
+[ext_resource type="AudioStream" uid="uid://bqmpwnrvel8dp" path="res://Assets/Sons/wrong_sound.mp3" id="29_5bnn5"]
+[ext_resource type="AudioStream" uid="uid://d1lke0rf0uvy7" path="res://Assets/Sons/correct_sound.mp3" id="30_i5juj"]
+[ext_resource type="Script" path="res://botoes/exitbuttonfase1.gd" id="31_qpggy"]
+[ext_resource type="Texture2D" uid="uid://ciy2rihnaijxe" path="res://Assets/Bonecos/flâmula caxeiras.png" id="32_us7jt"]
+[ext_resource type="Script" path="res://HUD.gd" id="33_qy8xn"]
+[ext_resource type="Texture2D" uid="uid://cf1vinptdbttn" path="res://Assets/Fundos/caixa do tempo das fases.png" id="34_1h8he"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_67u3i"]
+font_size = 50
+
+[node name="LevelManager" type="Node2D"]
+script = ExtResource("1_26k50")
+total_correct_objects = 4
+metadata/_edit_horizontal_guides_ = [-1.0]
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+
+[node name="Cenário" type="TextureRect" parent="."]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 1.0
+offset_top = 3.0
+offset_right = 1153.0
+offset_bottom = 647.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("2_d7p4h")
+expand_mode = 2
+
+[node name="Object1" type="TextureButton" parent="."]
+offset_left = 250.0
+offset_top = 425.0
+offset_right = 2330.0
+offset_bottom = 2805.0
+scale = Vector2(0.05, 0.05)
+texture_normal = ExtResource("3_wdfc0")
+stretch_mode = 0
+script = ExtResource("4_p522h")
+
+[node name="Object2" type="TextureButton" parent="."]
+offset_left = 493.0
+offset_top = 55.0
+offset_right = 1723.0
+offset_bottom = 1125.0
+scale = Vector2(0.1, 0.1)
+texture_normal = ExtResource("5_cn584")
+stretch_mode = 0
+script = ExtResource("6_ikwkj")
+is_correct_object = true
+
+[node name="InfoCard" type="Panel" parent="Object2"]
+visible = false
+self_modulate = Color(1, 1, 1, 0)
+layout_mode = 0
+offset_left = 710.0
+offset_top = 140.0
+offset_right = 1265.0
+offset_bottom = 530.0
+
+[node name="Label" type="Label" parent="Object2/InfoCard"]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 23.0
+
+[node name="Button" type="Button" parent="Object2/InfoCard"]
+layout_mode = 0
+offset_left = -1130.0
+offset_top = -830.0
+offset_right = 802.0
+offset_bottom = 870.0
+scale = Vector2(0.5, 0.5)
+text = "
+"
+icon = ExtResource("7_iqfva")
+flat = true
+script = ExtResource("8_t1bol")
+
+[node name="TextureRect" type="TextureRect" parent="Object2/InfoCard"]
+layout_mode = 0
+offset_left = -3430.0
+offset_top = -200.0
+offset_right = 4120.0
+offset_bottom = 8625.0
+scale = Vector2(0.4, 0.4)
+texture = ExtResource("9_dddct")
+
+[node name="Object3" type="TextureButton" parent="."]
+offset_left = 816.0
+offset_top = 298.0
+offset_right = 1243.0
+offset_bottom = 662.0
+rotation = -0.00817793
+scale = Vector2(0.3, 0.3)
+texture_normal = ExtResource("10_jfoxb")
+stretch_mode = 0
+script = ExtResource("11_25ou8")
+is_correct_object = true
+
+[node name="InfoCard" type="Panel" parent="Object3"]
+visible = false
+self_modulate = Color(0, 0, 0, 0)
+layout_mode = 0
+offset_left = -1846.0
+offset_top = -135.0
+offset_right = -1539.0
+offset_bottom = -33.0
+
+[node name="Label" type="Label" parent="Object3/InfoCard"]
+layout_mode = 0
+offset_left = -223.978
+offset_top = 531.419
+offset_right = 528.022
+offset_bottom = 600.419
+label_settings = SubResource("LabelSettings_67u3i")
+
+[node name="Button" type="Button" parent="Object3/InfoCard"]
+layout_mode = 0
+offset_left = 1430.82
+offset_top = -48.4014
+offset_right = 3362.82
+offset_bottom = 1039.6
+scale = Vector2(0.3, 0.3)
+text = "
+"
+icon = ExtResource("7_iqfva")
+flat = true
+script = ExtResource("8_t1bol")
+
+[node name="TextureRect" type="TextureRect" parent="Object3/InfoCard"]
+layout_mode = 0
+offset_left = 925.704
+offset_top = 167.475
+offset_right = 3603.7
+offset_bottom = 3699.48
+scale = Vector2(0.4, 0.4)
+texture = ExtResource("12_3c1d5")
+
+[node name="Object4" type="TextureButton" parent="."]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = 751.0
+offset_top = 387.0
+offset_right = 3114.0
+offset_bottom = 3475.0
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(0.08, 0.08)
+texture_normal = ExtResource("13_jwvqi")
+stretch_mode = 0
+script = ExtResource("14_edkas")
+
+[node name="Object5" type="TextureButton" parent="."]
+offset_left = 609.0
+offset_top = 178.0
+offset_right = 1689.0
+offset_bottom = 1528.0
+scale = Vector2(0.1, 0.1)
+texture_normal = ExtResource("15_8tcp0")
+stretch_mode = 0
+script = ExtResource("16_1n30i")
+
+[node name="Object6" type="TextureButton" parent="."]
+offset_left = 171.0
+offset_top = 192.0
+offset_right = 1341.0
+offset_bottom = 972.0
+scale = Vector2(0.1, 0.1)
+texture_normal = ExtResource("17_ncamd")
+stretch_mode = 0
+script = ExtResource("18_gfah4")
+is_correct_object = true
+
+[node name="InfoCard" type="Panel" parent="Object6"]
+visible = false
+self_modulate = Color(1, 1, 1, 0)
+layout_mode = 0
+offset_left = 262.0
+offset_top = 262.0
+offset_right = 527.0
+offset_bottom = 328.0
+
+[node name="Label" type="Label" parent="Object6/InfoCard"]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 23.0
+
+[node name="Button" type="Button" parent="Object6/InfoCard"]
+layout_mode = 0
+offset_left = -572.0
+offset_top = -1642.0
+offset_right = 1703.0
+offset_bottom = -92.0
+scale = Vector2(0.5, 0.5)
+text = "Fechar
+"
+icon = ExtResource("7_iqfva")
+flat = true
+script = ExtResource("8_t1bol")
+
+[node name="TextureRect" type="TextureRect" parent="Object6/InfoCard"]
+layout_mode = 0
+offset_left = -2562.0
+offset_top = -932.0
+offset_right = 4963.0
+offset_bottom = 8576.0
+scale = Vector2(0.4, 0.4)
+texture = ExtResource("19_4qh74")
+
+[node name="Object7" type="TextureButton" parent="."]
+offset_left = 977.0
+offset_top = 504.0
+offset_right = 2327.0
+offset_bottom = 1994.0
+scale = Vector2(0.1, 0.1)
+texture_normal = ExtResource("20_vpkl3")
+stretch_mode = 0
+script = ExtResource("21_holr4")
+
+[node name="Object8" type="TextureButton" parent="."]
+offset_left = 266.0
+offset_top = -42.0
+offset_right = 2136.0
+offset_bottom = 1308.0
+scale = Vector2(0.1, 0.1)
+texture_normal = ExtResource("22_oora2")
+stretch_mode = 0
+script = ExtResource("23_22nma")
+
+[node name="Object9" type="TextureButton" parent="."]
+offset_left = 37.0
+offset_top = 371.0
+offset_right = 2337.0
+offset_bottom = 3141.0
+scale = Vector2(0.1, 0.1)
+texture_normal = ExtResource("24_1lt85")
+stretch_mode = 0
+script = ExtResource("25_7hoxb")
+
+[node name="Object10" type="TextureButton" parent="."]
+offset_left = 446.0
+offset_top = 447.0
+offset_right = 880.0
+offset_bottom = 857.0
+scale = Vector2(0.2, 0.2)
+texture_normal = ExtResource("26_cocxq")
+script = ExtResource("27_uslaf")
+is_correct_object = true
+
+[node name="InfoCard" type="Panel" parent="Object10"]
+visible = false
+self_modulate = Color(1, 1, 1, 0)
+layout_mode = 0
+offset_left = 262.0
+offset_top = 262.0
+offset_right = 527.0
+offset_bottom = 328.0
+
+[node name="Label" type="Label" parent="Object10/InfoCard"]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 23.0
+
+[node name="Button" type="Button" parent="Object10/InfoCard"]
+layout_mode = 0
+offset_left = -537.0
+offset_top = -1452.0
+offset_right = 1564.0
+offset_bottom = -114.0
+scale = Vector2(0.4, 0.4)
+text = "
+"
+icon = ExtResource("7_iqfva")
+flat = true
+script = ExtResource("8_t1bol")
+
+[node name="TextureRect" type="TextureRect" parent="Object10/InfoCard"]
+layout_mode = 0
+offset_left = -1662.0
+offset_top = -1047.0
+offset_right = 2517.0
+offset_bottom = 3924.0
+scale = Vector2(0.4, 0.4)
+texture = ExtResource("28_0j8x4")
+
+[node name="AudioPlayerWrong" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("29_5bnn5")
+
+[node name="AudioPlayerCorrect" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("30_i5juj")
+
+[node name="exitbutton" type="TextureButton" parent="."]
+offset_left = -68.0
+offset_top = 569.0
+offset_right = 144.0
+offset_bottom = 679.0
+texture_normal = ExtResource("7_iqfva")
+ignore_texture_size = true
+stretch_mode = 0
+script = ExtResource("31_qpggy")
+
+[node name="FlâmulaCaxeiras" type="Sprite2D" parent="."]
+position = Vector2(585, 491)
+scale = Vector2(0.0875, 0.0844445)
+texture = ExtResource("32_us7jt")
+
+[node name="BandeirinhasSãoJoão" type="Sprite2D" parent="."]
+position = Vector2(894.893, 231.536)
+rotation = 0.396937
+scale = Vector2(0.077712, 0.0490626)
+texture = ExtResource("22_oora2")
+
+[node name="BandeirinhasSãoJoão2" type="Sprite2D" parent="."]
+position = Vector2(34.6162, 183.647)
+rotation = -0.215224
+scale = Vector2(0.0663528, 0.0413129)
+texture = ExtResource("22_oora2")
+
+[node name="Vela" type="Sprite2D" parent="."]
+position = Vector2(502, 323)
+scale = Vector2(0.14977, 0.232927)
+texture = ExtResource("26_cocxq")
+
+[node name="Vela2" type="Sprite2D" parent="."]
+position = Vector2(742, 309)
+scale = Vector2(0.14977, 0.232927)
+texture = ExtResource("26_cocxq")
+
+[node name="HUD" type="CanvasLayer" parent="."]
+script = ExtResource("33_qy8xn")
+
+[node name="TextureRect" type="TextureRect" parent="HUD"]
+offset_left = 498.0
+offset_top = -50.0
+offset_right = 2418.0
+offset_bottom = 1030.0
+scale = Vector2(0.15, 0.15)
+texture = ExtResource("34_1h8he")
+
+[node name="TimeLabel" type="Label" parent="HUD"]
+offset_left = 609.0
+offset_top = 13.0
+offset_right = 734.0
+offset_bottom = 36.0
+
+[node name="ProgressBar" type="ProgressBar" parent="HUD"]
+modulate = Color(0.227451, 0.941176, 0.141176, 1)
+self_modulate = Color(0.227451, 0.941176, 0.141176, 1)
+offset_left = 983.0
+offset_top = 14.0
+offset_right = 1121.0
+offset_bottom = 53.0
+theme_override_colors/font_color = Color(0, 1, 0, 1)
+theme_override_colors/font_outline_color = Color(0, 1, 0, 1)
+show_percentage = false
+
+[connection signal="mouse_entered" from="Object1" to="Object1" method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="Object1" to="Object1" method="_on_mouse_exited"]
+[connection signal="mouse_entered" from="Object2" to="Object2" method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="Object2" to="Object2" method="_on_mouse_exited"]
+[connection signal="pressed" from="Object2/InfoCard/Button" to="Object2/InfoCard/Button" method="_on_pressed"]
+[connection signal="mouse_entered" from="Object3" to="Object3" method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="Object3" to="Object3" method="_on_mouse_exited"]
+[connection signal="pressed" from="Object3/InfoCard/Button" to="Object3/InfoCard/Button" method="_on_pressed"]
+[connection signal="mouse_entered" from="Object4" to="Object4" method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="Object4" to="Object4" method="_on_mouse_exited"]
+[connection signal="mouse_entered" from="Object5" to="Object5" method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="Object5" to="Object5" method="_on_mouse_exited"]
+[connection signal="mouse_entered" from="Object6" to="Object6" method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="Object6" to="Object6" method="_on_mouse_exited"]
+[connection signal="pressed" from="Object6/InfoCard/Button" to="Object6/InfoCard/Button" method="_on_pressed"]
+[connection signal="mouse_entered" from="Object7" to="Object7" method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="Object7" to="Object7" method="_on_mouse_exited"]
+[connection signal="mouse_entered" from="Object8" to="Object8" method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="Object8" to="Object8" method="_on_mouse_exited"]
+[connection signal="mouse_entered" from="Object9" to="Object9" method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="Object9" to="Object9" method="_on_mouse_exited"]
+[connection signal="mouse_entered" from="Object10" to="Object10" method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="Object10" to="Object10" method="_on_mouse_exited"]
+[connection signal="pressed" from="Object10/InfoCard/Button" to="Object10/InfoCard/Button" method="_on_pressed"]

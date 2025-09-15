@@ -1,0 +1,549 @@
+[gd_scene load_steps=40 format=3 uid="uid://b3rceyugpa1ru"]
+
+[ext_resource type="Texture2D" uid="uid://cely4d2ja641h" path="res://Assets/Fundos/WhatsApp Image 2025-08-10 at 11.54.02.jpeg" id="1_nsvea"]
+[ext_resource type="Texture2D" uid="uid://cxcp6saelwx0l" path="res://Assets/Bonecos/estandate reggae.png" id="2_yg5p1"]
+[ext_resource type="Script" path="res://objetos/object_1.gd" id="3_um10u"]
+[ext_resource type="Texture2D" uid="uid://dyoxe4upfjd3l" path="res://Assets/Bonecos/Disco.png" id="4_35rqg"]
+[ext_resource type="Script" path="res://objetos/object_2.2.gd" id="5_ut7uq"]
+[ext_resource type="Texture2D" uid="uid://b6jjipnog7wbc" path="res://Assets/Fundos/botao voltar menu de fases.png" id="6_qemt6"]
+[ext_resource type="Script" path="res://botoes/button.gd" id="7_lwi3m"]
+[ext_resource type="Texture2D" uid="uid://cejwxkl2kmij8" path="res://Assets/cards dos elementos/5.png" id="8_bi44n"]
+[ext_resource type="Texture2D" uid="uid://hsvrr7440q5j" path="res://Assets/Bonecos/guitarra.png" id="9_e5d4c"]
+[ext_resource type="Script" path="res://objetos/object_3.gd" id="10_x4lf2"]
+[ext_resource type="Texture2D" uid="uid://byw5wqa65nidc" path="res://Assets/Bonecos/caixa de som.png" id="11_lgjwg"]
+[ext_resource type="Script" path="res://objetos/object_4.gd" id="12_t4e7m"]
+[ext_resource type="Texture2D" uid="uid://cj6fj5u08yftg" path="res://Assets/Bonecos/chocalho.png" id="13_4jury"]
+[ext_resource type="Script" path="res://objetos/object_5.gd" id="14_q270h"]
+[ext_resource type="Texture2D" uid="uid://chgoxsk6yfsu2" path="res://Assets/Bonecos/Boina.png" id="15_budwi"]
+[ext_resource type="Script" path="res://objetos/object_6.6.gd" id="16_vfx4t"]
+[ext_resource type="Texture2D" uid="uid://v58hq1jnv8ux" path="res://Assets/cards dos elementos/4.png" id="17_j4guw"]
+[ext_resource type="Texture2D" uid="uid://0fwcej7jjdui" path="res://Assets/Bonecos/bandeira da jamaica.png" id="18_65sps"]
+[ext_resource type="Script" path="res://objetos/object_7.gd" id="19_2qerx"]
+[ext_resource type="Texture2D" uid="uid://g4gjofwoj4n" path="res://Assets/Bonecos/guitarra 2.png" id="20_bao5u"]
+[ext_resource type="Script" path="res://objetos/object_8.gd" id="21_hwf6f"]
+[ext_resource type="Texture2D" uid="uid://bmrfka4ckkcc3" path="res://Assets/Bonecos/Radiola.png" id="22_jft8r"]
+[ext_resource type="Script" path="res://objetos/object_9.2.gd" id="23_8ni52"]
+[ext_resource type="Texture2D" uid="uid://dajp42k3wdfrq" path="res://Assets/cards dos elementos/8.png" id="24_6kgdu"]
+[ext_resource type="Texture2D" uid="uid://ch8xtuk6wx1i6" path="res://Assets/Bonecos/Tambor.png" id="25_k57ba"]
+[ext_resource type="Script" path="res://objetos/object_10.2.gd" id="26_two5q"]
+[ext_resource type="Texture2D" uid="uid://oqbpanfxlfud" path="res://Assets/cards dos elementos/9.png" id="27_naeod"]
+[ext_resource type="Script" path="res://objetos/object_10.gd" id="28_2pryt"]
+[ext_resource type="Texture2D" uid="uid://de1cukvcx8pb2" path="res://Assets/Bonecos/Vitrola.png" id="29_au66c"]
+[ext_resource type="Script" path="res://objetos/object_12.gd" id="30_5lti3"]
+[ext_resource type="Texture2D" uid="uid://eondropbmtqw" path="res://Assets/cards dos elementos/13.png" id="31_hs3pv"]
+[ext_resource type="Texture2D" uid="uid://cebh0d6w3kmkg" path="res://Assets/Bonecos/sinal da paz.png" id="32_wdnw8"]
+[ext_resource type="Texture2D" uid="uid://cswq0yo2kolej" path="res://Assets/Bonecos/pedro palhaço reggae.png" id="33_24mea"]
+[ext_resource type="AudioStream" uid="uid://bqmpwnrvel8dp" path="res://Assets/Sons/wrong_sound.mp3" id="34_x4xn6"]
+[ext_resource type="AudioStream" uid="uid://d1lke0rf0uvy7" path="res://Assets/Sons/correct_sound.mp3" id="35_3q5td"]
+[ext_resource type="Script" path="res://botoes/exitbuttonfase1.gd" id="36_xtnjq"]
+[ext_resource type="Script" path="res://hud_2.gd" id="37_e4iuh"]
+[ext_resource type="Texture2D" uid="uid://cf1vinptdbttn" path="res://Assets/Fundos/caixa do tempo das fases.png" id="38_8ixmk"]
+
+[sub_resource type="GDScript" id="GDScript_mxav4"]
+script/source = "extends Node2D
+
+@export var total_correct_objects := 0
+var found_count := 0
+var elapsed_time := 0.0
+
+@onready var progress_label := $ProgressLabel
+@onready var timer_label := $TimerLabel
+
+func _ready():
+    # Conta automaticamente quantos objetos corretos existem
+    total_correct_objects = get_tree().get_nodes_in_group(\"correct_object\").size()
+    _update_progress()
+    # Inicia o contador de tempo
+    set_process(true)
+
+func _process(delta):
+    elapsed_time += delta
+    _update_timer()
+
+func on_correct_found():
+    found_count += 1
+    _update_progress()
+    if found_count >= total_correct_objects:
+        _on_level_complete()
+
+func _on_level_complete():
+    print(\"✅ Fase concluída!\")
+    Global.unlock_next_from_zero_based(Global.numStage - 1)
+    # Mostra tempo final (opcional)
+    print(\"⏱ Tempo final: %.2f segundos\" % elapsed_time)
+    # Aqui você pode abrir uma tela de \"Vitória\" ou voltar para o menu
+    await get_tree().create_timer(1.0).timeout
+    get_tree().change_scene_to_file(\"res://level_select.tscn\")
+
+func _update_progress():
+    if progress_label:
+        progress_label.text = \"%d / %d encontrados\" % [found_count, total_correct_objects]
+
+func _update_timer():
+    if timer_label:
+        var minutes = int(elapsed_time) / 60
+        var seconds = int(elapsed_time) % 60
+        timer_label.text = \"%02d:%02d\" % [minutes, seconds]
+"
+
+[node name="Node2D" type="Node2D"]
+script = SubResource("GDScript_mxav4")
+metadata/_edit_horizontal_guides_ = [-1.0]
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+
+[node name="Cenário" type="TextureRect" parent="."]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 1.0
+offset_top = 3.0
+offset_right = 1153.0
+offset_bottom = 647.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("1_nsvea")
+expand_mode = 2
+
+[node name="Object1" type="TextureButton" parent="."]
+offset_left = 872.0
+offset_top = 20.0
+offset_right = 2672.0
+offset_bottom = 2154.0
+scale = Vector2(0.03, 0.03)
+texture_normal = ExtResource("2_yg5p1")
+stretch_mode = 0
+script = ExtResource("3_um10u")
+
+[node name="Object2" type="TextureButton" parent="."]
+offset_left = 859.0
+offset_top = 129.0
+offset_right = 2039.0
+offset_bottom = 1189.0
+scale = Vector2(0.02, 0.02)
+texture_normal = ExtResource("4_35rqg")
+stretch_mode = 0
+script = ExtResource("5_ut7uq")
+is_correct_object = true
+
+[node name="InfoCard" type="Panel" parent="Object2"]
+visible = false
+self_modulate = Color(1, 1, 1, 0)
+layout_mode = 0
+offset_left = 710.0
+offset_top = 140.0
+offset_right = 1265.0
+offset_bottom = 530.0
+
+[node name="Label" type="Label" parent="Object2/InfoCard"]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 23.0
+
+[node name="Button" type="Button" parent="Object2/InfoCard"]
+layout_mode = 0
+offset_left = -460.0
+offset_top = -6790.0
+offset_right = 1472.0
+offset_bottom = -5702.0
+scale = Vector2(4, 4)
+text = "
+"
+icon = ExtResource("6_qemt6")
+flat = true
+script = ExtResource("7_lwi3m")
+
+[node name="TextureRect" type="TextureRect" parent="Object2/InfoCard"]
+layout_mode = 0
+offset_left = -10510.0
+offset_top = -3590.0
+offset_right = 33115.0
+offset_bottom = 48160.0
+scale = Vector2(0.4, 0.4)
+texture = ExtResource("8_bi44n")
+
+[node name="Object3" type="TextureButton" parent="."]
+offset_left = 417.0
+offset_top = 207.0
+offset_right = 1782.0
+offset_bottom = 1811.0
+rotation = -0.445001
+scale = Vector2(0.05, 0.05)
+texture_normal = ExtResource("9_e5d4c")
+stretch_mode = 0
+script = ExtResource("10_x4lf2")
+
+[node name="Object4" type="TextureButton" parent="."]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = 370.0
+offset_top = 592.0
+offset_right = 2070.0
+offset_bottom = 2492.0
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(0.03, 0.03)
+texture_normal = ExtResource("11_lgjwg")
+stretch_mode = 0
+script = ExtResource("12_t4e7m")
+
+[node name="Object5" type="TextureButton" parent="."]
+offset_left = 27.0
+offset_top = 280.0
+offset_right = 1327.0
+offset_bottom = 1847.0
+scale = Vector2(0.03, 0.03)
+texture_normal = ExtResource("13_4jury")
+stretch_mode = 0
+script = ExtResource("14_q270h")
+
+[node name="Object6" type="TextureButton" parent="."]
+offset_left = 678.0
+offset_top = 255.0
+offset_right = 1935.0
+offset_bottom = 1035.0
+rotation = -0.51925
+scale = Vector2(0.05, 0.05)
+texture_normal = ExtResource("15_budwi")
+stretch_mode = 0
+script = ExtResource("16_vfx4t")
+is_correct_object = true
+
+[node name="InfoCard" type="Panel" parent="Object6"]
+visible = false
+layout_mode = 0
+offset_left = -7292.83
+offset_top = -4007.08
+offset_right = -7027.83
+offset_bottom = -3941.08
+
+[node name="Button" type="Button" parent="Object6/InfoCard"]
+layout_mode = 0
+offset_left = 9123.94
+offset_top = 561.586
+offset_right = 11107.9
+offset_bottom = 1649.59
+rotation = 0.53784
+scale = Vector2(2, 2)
+text = "Fechar
+"
+icon = ExtResource("6_qemt6")
+flat = true
+script = ExtResource("7_lwi3m")
+
+[node name="TextureRect" type="TextureRect" parent="Object6/InfoCard"]
+layout_mode = 0
+offset_left = 3867.49
+offset_top = -761.171
+offset_right = 27915.5
+offset_bottom = 29651.8
+rotation = 0.499425
+scale = Vector2(0.3, 0.3)
+texture = ExtResource("17_j4guw")
+
+[node name="Object7" type="TextureButton" parent="."]
+offset_left = 1080.0
+offset_top = 461.0
+offset_right = 2160.0
+offset_bottom = 1811.0
+scale = Vector2(0.03, 0.03)
+texture_normal = ExtResource("18_65sps")
+stretch_mode = 0
+script = ExtResource("19_2qerx")
+
+[node name="Object8" type="TextureButton" parent="."]
+offset_left = 882.0
+offset_top = 355.0
+offset_right = 2512.0
+offset_bottom = 1705.0
+rotation = 0.489407
+scale = Vector2(0.05, 0.05)
+texture_normal = ExtResource("20_bao5u")
+stretch_mode = 0
+script = ExtResource("21_hwf6f")
+
+[node name="Object9" type="TextureButton" parent="."]
+offset_top = 521.0
+offset_right = 680.0
+offset_bottom = 1039.0
+scale = Vector2(0.1, 0.1)
+texture_normal = ExtResource("22_jft8r")
+stretch_mode = 0
+script = ExtResource("23_8ni52")
+is_correct_object = true
+
+[node name="InfoCard" type="Panel" parent="Object9"]
+visible = false
+self_modulate = Color(1, 1, 1, 0)
+layout_mode = 0
+offset_left = 710.0
+offset_top = 140.0
+offset_right = 1265.0
+offset_bottom = 530.0
+
+[node name="Label" type="Label" parent="Object9/InfoCard"]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 23.0
+
+[node name="Button" type="Button" parent="Object9/InfoCard"]
+layout_mode = 0
+offset_left = 550.0
+offset_top = -3310.0
+offset_right = 2482.0
+offset_bottom = -2222.0
+text = "
+"
+icon = ExtResource("6_qemt6")
+flat = true
+script = ExtResource("7_lwi3m")
+
+[node name="TextureRect" type="TextureRect" parent="Object9/InfoCard"]
+layout_mode = 0
+offset_left = -840.0
+offset_top = -2390.0
+offset_right = 5810.0
+offset_bottom = 5960.0
+scale = Vector2(0.4, 0.4)
+texture = ExtResource("24_6kgdu")
+
+[node name="Object10" type="TextureButton" parent="."]
+offset_left = 166.0
+offset_top = 557.0
+offset_right = 1056.0
+offset_bottom = 1157.0
+scale = Vector2(0.1, 0.1)
+texture_normal = ExtResource("25_k57ba")
+stretch_mode = 0
+script = ExtResource("26_two5q")
+is_correct_object = true
+
+[node name="InfoCard" type="Panel" parent="Object10"]
+visible = false
+self_modulate = Color(1, 1, 1, 0)
+layout_mode = 0
+offset_left = 710.0
+offset_top = 140.0
+offset_right = 1265.0
+offset_bottom = 530.0
+
+[node name="Label" type="Label" parent="Object10/InfoCard"]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 23.0
+
+[node name="Button" type="Button" parent="Object10/InfoCard"]
+layout_mode = 0
+offset_left = 560.0
+offset_top = -3750.0
+offset_right = 2492.0
+offset_bottom = -2662.0
+text = "
+"
+icon = ExtResource("6_qemt6")
+flat = true
+script = ExtResource("7_lwi3m")
+
+[node name="TextureRect" type="TextureRect" parent="Object10/InfoCard"]
+layout_mode = 0
+offset_left = -840.0
+offset_top = -2890.0
+offset_right = 6860.0
+offset_bottom = 6710.0
+scale = Vector2(0.4, 0.4)
+texture = ExtResource("27_naeod")
+
+[node name="Object11" type="TextureButton" parent="."]
+offset_left = 620.0
+offset_top = 492.0
+offset_right = 1700.0
+offset_bottom = 1842.0
+scale = Vector2(0.03, 0.03)
+texture_normal = ExtResource("13_4jury")
+stretch_mode = 0
+script = ExtResource("28_2pryt")
+
+[node name="Object12" type="TextureButton" parent="."]
+offset_left = 424.0
+offset_top = 42.0
+offset_right = 1624.0
+offset_bottom = 1475.0
+scale = Vector2(0.03, 0.03)
+texture_normal = ExtResource("29_au66c")
+stretch_mode = 0
+script = ExtResource("30_5lti3")
+is_correct_object = true
+
+[node name="InfoCard" type="Panel" parent="Object12"]
+visible = false
+self_modulate = Color(1, 1, 1, 0)
+layout_mode = 0
+offset_left = 710.0
+offset_top = 140.0
+offset_right = 1265.0
+offset_bottom = 530.0
+
+[node name="Label" type="Label" parent="Object12/InfoCard"]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 23.0
+
+[node name="Button" type="Button" parent="Object12/InfoCard"]
+layout_mode = 0
+offset_left = -709.999
+offset_top = -1306.67
+offset_right = 1222.0
+offset_bottom = -218.666
+scale = Vector2(3, 3)
+text = "
+"
+icon = ExtResource("6_qemt6")
+flat = true
+script = ExtResource("7_lwi3m")
+
+[node name="TextureRect" type="TextureRect" parent="Object12/InfoCard"]
+layout_mode = 0
+offset_left = -7810.0
+offset_top = 726.667
+offset_right = 15540.0
+offset_bottom = 31859.7
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("31_hs3pv")
+
+[node name="Object13" type="TextureButton" parent="."]
+offset_left = 243.0
+offset_top = 103.0
+offset_right = 1323.0
+offset_bottom = 1453.0
+scale = Vector2(0.03, 0.03)
+texture_normal = ExtResource("32_wdnw8")
+stretch_mode = 0
+script = ExtResource("28_2pryt")
+
+[node name="Object14" type="TextureButton" parent="."]
+offset_left = 82.0
+offset_top = 298.0
+offset_right = 1162.0
+offset_bottom = 1648.0
+scale = Vector2(0.05, 0.05)
+texture_normal = ExtResource("33_24mea")
+stretch_mode = 0
+script = ExtResource("28_2pryt")
+
+[node name="AudioPlayerWrong" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("34_x4xn6")
+
+[node name="AudioPlayerCorrect" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("35_3q5td")
+
+[node name="exitbutton" type="TextureButton" parent="."]
+offset_left = -45.0
+offset_top = 577.0
+offset_right = 139.0
+offset_bottom = 677.0
+texture_normal = ExtResource("6_qemt6")
+ignore_texture_size = true
+stretch_mode = 0
+script = ExtResource("36_xtnjq")
+
+[node name="SinalDaPaz" type="Sprite2D" parent="."]
+position = Vector2(1042, 377)
+scale = Vector2(0.0287037, 0.027037)
+texture = ExtResource("32_wdnw8")
+
+[node name="SinalDaPaz2" type="Sprite2D" parent="."]
+position = Vector2(944, 414)
+scale = Vector2(0.0287037, 0.027037)
+texture = ExtResource("32_wdnw8")
+
+[node name="Boina" type="Sprite2D" parent="."]
+position = Vector2(573.111, 164.54)
+rotation = 0.679177
+scale = Vector2(0.145481, 0.170803)
+texture = ExtResource("15_budwi")
+
+[node name="Boina2" type="Sprite2D" parent="."]
+position = Vector2(851, 490)
+rotation = -0.518025
+scale = Vector2(0.200082, 0.179958)
+texture = ExtResource("15_budwi")
+
+[node name="CaixaDeSom" type="Sprite2D" parent="."]
+position = Vector2(510, 26)
+scale = Vector2(0.043287, 0.0288889)
+texture = ExtResource("11_lgjwg")
+
+[node name="CaixaDeSom2" type="Sprite2D" parent="."]
+position = Vector2(1047, 47)
+scale = Vector2(0.043287, 0.0288889)
+texture = ExtResource("11_lgjwg")
+
+[node name="Radiola" type="Sprite2D" parent="."]
+position = Vector2(178, 214)
+scale = Vector2(0.166667, 0.176259)
+texture = ExtResource("22_jft8r")
+
+[node name="HUD2" type="CanvasLayer" parent="."]
+script = ExtResource("37_e4iuh")
+
+[node name="TextureRect" type="TextureRect" parent="HUD2"]
+offset_left = 518.0
+offset_top = -49.0
+offset_right = 2438.0
+offset_bottom = 1031.0
+scale = Vector2(0.15, 0.15)
+texture = ExtResource("38_8ixmk")
+
+[node name="TimeLabel" type="Label" parent="HUD2"]
+offset_left = 609.0
+offset_top = 13.0
+offset_right = 734.0
+offset_bottom = 36.0
+
+[node name="ProgressBar" type="ProgressBar" parent="HUD2"]
+modulate = Color(0.227459, 0.941425, 0.140065, 1)
+self_modulate = Color(0.227451, 0.941176, 0.141176, 1)
+offset_left = 983.0
+offset_top = 14.0
+offset_right = 1121.0
+offset_bottom = 53.0
+theme_override_colors/font_color = Color(0, 1, 0, 1)
+theme_override_colors/font_outline_color = Color(0, 1, 0, 1)
+show_percentage = false
+
+[connection signal="mouse_entered" from="Object1" to="Object1" method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="Object1" to="Object1" method="_on_mouse_exited"]
+[connection signal="mouse_entered" from="Object2" to="Object2" method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="Object2" to="Object2" method="_on_mouse_exited"]
+[connection signal="pressed" from="Object2/InfoCard/Button" to="Object2/InfoCard/Button" method="_on_pressed"]
+[connection signal="mouse_entered" from="Object3" to="Object3" method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="Object3" to="Object3" method="_on_mouse_exited"]
+[connection signal="mouse_entered" from="Object4" to="Object4" method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="Object4" to="Object4" method="_on_mouse_exited"]
+[connection signal="mouse_entered" from="Object5" to="Object5" method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="Object5" to="Object5" method="_on_mouse_exited"]
+[connection signal="mouse_entered" from="Object6" to="Object6" method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="Object6" to="Object6" method="_on_mouse_exited"]
+[connection signal="pressed" from="Object6/InfoCard/Button" to="Object6/InfoCard/Button" method="_on_pressed"]
+[connection signal="mouse_entered" from="Object7" to="Object7" method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="Object7" to="Object7" method="_on_mouse_exited"]
+[connection signal="mouse_entered" from="Object8" to="Object8" method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="Object8" to="Object8" method="_on_mouse_exited"]
+[connection signal="mouse_entered" from="Object9" to="Object9" method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="Object9" to="Object9" method="_on_mouse_exited"]
+[connection signal="pressed" from="Object9/InfoCard/Button" to="Object9/InfoCard/Button" method="_on_pressed"]
+[connection signal="mouse_entered" from="Object10" to="Object10" method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="Object10" to="Object10" method="_on_mouse_exited"]
+[connection signal="pressed" from="Object10/InfoCard/Button" to="Object10/InfoCard/Button" method="_on_pressed"]
+[connection signal="mouse_entered" from="Object11" to="Object11" method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="Object11" to="Object11" method="_on_mouse_exited"]
+[connection signal="mouse_entered" from="Object12" to="Object12" method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="Object12" to="Object12" method="_on_mouse_exited"]
+[connection signal="pressed" from="Object12/InfoCard/Button" to="Object12/InfoCard/Button" method="_on_pressed"]
+[connection signal="mouse_entered" from="Object13" to="Object13" method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="Object13" to="Object13" method="_on_mouse_exited"]
+[connection signal="mouse_entered" from="Object14" to="Object14" method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="Object14" to="Object14" method="_on_mouse_exited"]
